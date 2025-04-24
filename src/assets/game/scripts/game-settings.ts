@@ -4,18 +4,18 @@ import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import { sharedContainer } from "../../scripts/shared-container";
 
 export const settings = {
-    id: 2,
-    name: "SeDie",
-    namespaces: ["SeDie"],
+    id: 103,
+    name: "SevenUpDown",
+    namespaces: ["7Up7Down"],
     durations: {
-        wholeRound: 39,
-        lockingBet: 5,
-        placingBet: 30,
-        generatingResult: 1,
-        showingResult: 6,
-        startRound: 2,
+        wholeRound: 33,
+        lockingBet: 3,
+        placingBet: 20,
+        generatingResult: 11,
+        startRound: 1,
     },
     numberOfRoundHistory: 100,
+    isMiniGame: true,
 };
 
 export const containerOptions: gc.IContainerOptions = {

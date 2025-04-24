@@ -200,19 +200,16 @@ export const languages = {
         "win_loss": "Menang Kalah",
         "you_reach_max_win": "Anda mencapai Maksimal Menang"
     },
-    "SeDie": {
-        "bet_option_red2": "2 Merah",
-        "bet_option_red3": "3 Merah",
-        "bet_option_red4": "4 Merah",
-        "bet_option_white3": "1 Merah",
-        "bet_option_white4": "4 Putih",
-        "even_win": "GENAP MENANG",
-        "game_icon_name": "SE DIE",
-        "game_name": "Se Die",
-        "glossary_even": "Genap",
-        "glossary_odd": "Ganjil",
-        "odd_win": "GANJIL MENANG"
-    }
+    "7Up7Down": {
+        "7_win": "7 MENANG",
+        "down_win": "TURUN MENANG",
+        "game_icon_name": "7 NAIK 7 TURUN",
+        "game_name": "7 Naik 7 Turun",
+        "glossary_7": "7",
+        "glossary_down": "Turun",
+        "glossary_up": "Naik",
+        "up_win": "NAIK MENANG"
+    },
 };
 
 if (!win.languages) {

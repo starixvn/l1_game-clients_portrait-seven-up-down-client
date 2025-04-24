@@ -200,19 +200,16 @@ export const languages = {
         "win_loss": "贏 輸",
         "you_reach_max_win": "您達到了最大勝利"
     },
-    "SeDie": {
-        "bet_option_red2": "2 紅",
-        "bet_option_red3": "3 紅",
-        "bet_option_red4": "4 紅",
-        "bet_option_white3": "1 紅",
-        "bet_option_white4": "4 白",
-        "even_win": "雙贏",
-        "game_icon_name": "色碟",
-        "game_name": "色碟",
-        "glossary_even": "雙",
-        "glossary_odd": "單",
-        "odd_win": "單贏"
-    }
+    "7Up7Down": {
+        "7_win": "7 赢",
+        "down_win": "下赢",
+        "game_icon_name": "7 上 7 下",
+        "game_name": "7 上 7 下",
+        "glossary_7": "7",
+        "glossary_down": "下",
+        "glossary_up": "上",
+        "up_win": "上贏"
+    },
 };
 
 if (!win.languages) {

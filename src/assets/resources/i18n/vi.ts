@@ -200,19 +200,16 @@ export const languages = {
         "win_loss": "Thắng Thua",
         "you_reach_max_win": "Bạn Đã Đạt Mức Tiền Thắng Tối Đa"
     },
-    "SeDie": {
-        "bet_option_red2": "2 Đỏ",
-        "bet_option_red3": "3 Đỏ",
-        "bet_option_red4": "4 Đỏ",
-        "bet_option_white3": "1 Đỏ",
-        "bet_option_white4": "4 Trắng",
-        "even_win": "CHẴN THẮNG",
-        "game_icon_name": "XÓC ĐĨA",
-        "game_name": "Xóc Đĩa",
-        "glossary_even": "Chẵn",
-        "glossary_odd": "Lẻ",
-        "odd_win": "LẺ THẮNG"
-    }
+    "7Up7Down": {
+        "7_win": "7 THẮNG",
+        "down_win": "DƯỚI 7 THẮNG",
+        "game_icon_name": "TRÊN 7 DƯỚI 7",
+        "game_name": "Trên 7 Dưới 7",
+        "glossary_7": "7",
+        "glossary_down": "Dưới",
+        "glossary_up": "Trên",
+        "up_win": "TRÊN 7 THẮNG"
+    },
 };
 
 if (!win.languages) {
