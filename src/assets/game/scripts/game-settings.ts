@@ -1,7 +1,7 @@
 import gc from "@sg/game-client-base";
 import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
-
 import { sharedContainer } from "../../scripts/shared-container";
+import * as SevenUpDownGameConfigFeature from "./game-config";
 
 export const settings = {
     id: 103,
@@ -24,5 +24,5 @@ export const containerOptions: gc.IContainerOptions = {
         container.bind(gc.GameConfigs.GameSetting).toConstantValue(settings);
         container.bind(LogStore).to(LogStore);
     },
-    features: [...gc.defaultFeatures, gc.BetDetailsNew],
+    features: [SevenUpDownGameConfigFeature, gc.RoundBasePF, ...gc.defaultFeatures],
 };

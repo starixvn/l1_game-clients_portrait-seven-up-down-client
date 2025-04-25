@@ -1,67 +1,68 @@
 {
-    "shake": {
-        "bundle": "resources",
-        "path": "shake",
-        "isLazyLoad": true
+    "crowd-game": {
+        "bundle": "resources"
     },
-    "odd_wins_zh_cn": {
-        "bundle": "resources",
-        "path": "winning/odd_wins_zh_cn",
-        "isLazyLoad": true
+    "dice_shake": {
+        "bundle": "resources"
     },
-    "odd_wins_en": {
-        "bundle": "resources",
-        "path": "winning/odd_wins_en",
-        "isLazyLoad": true
+    "down_win_vi": {
+        "bundle": "resources"
     },
-    "odd_wins_id": {
-        "bundle": "resources",
-        "path": "winning/odd_wins_id",
-        "isLazyLoad": true
+    "down_win_en": {
+        "bundle": "resources"
     },
-    "odd_wins_th": {
-        "bundle": "resources",
-        "path": "winning/odd_wins_th",
-        "isLazyLoad": true
+    "down_win_id": {
+        "bundle": "resources"
     },
-    "odd_wins_zh_tw": {
-        "bundle": "resources",
-        "path": "winning/odd_wins_zh_tw",
-        "isLazyLoad": true
+    "down_win_th": {
+        "bundle": "resources"
     },
-    "odd_wins_vi": {
-        "bundle": "resources",
-        "path": "winning/odd_wins_vi",
-        "isLazyLoad": true
+    "down_win_zh_cn": {
+        "bundle": "resources"
     },
-    "even_wins_zh_cn": {
-        "bundle": "resources",
-        "path": "winning/even_wins_zh_cn",
-        "isLazyLoad": true
+    "down_win_zh_tw": {
+        "bundle": "resources"
     },
-    "even_wins_en": {
-        "bundle": "resources",
-        "path": "winning/even_wins_en",
-        "isLazyLoad": true
+    "multiplier": {
+        "bundle": "resources"
     },
-    "even_wins_id": {
-        "bundle": "resources",
-        "path": "winning/even_wins_id",
-        "isLazyLoad": true
+    "seven_win_en": {
+        "bundle": "resources"
     },
-    "even_wins_th": {
-        "bundle": "resources",
-        "path": "winning/even_wins_th",
-        "isLazyLoad": true
+    "seven_win_vi": {
+        "bundle": "resources"
     },
-    "even_wins_zh_tw": {
-        "bundle": "resources",
-        "path": "winning/even_wins_zh_tw",
-        "isLazyLoad": true
+    "seven_win_th": {
+        "bundle": "resources"
     },
-    "even_wins_vi": {
-        "bundle": "resources",
-        "path": "winning/even_wins_vi",
-        "isLazyLoad": true
+    "seven_win_id": {
+        "bundle": "resources"
+    },
+    "seven_win_zh_cn": {
+        "bundle": "resources"
+    },
+    "seven_win_zh_tw": {
+        "bundle": "resources"
+    },
+    "starting-round": {
+        "bundle": "resources"
+    },
+    "up_win_en": {
+        "bundle": "resources"
+    },
+    "up_win_vi": {
+        "bundle": "resources"
+    },
+    "up_win_th": {
+        "bundle": "resources"
+    },
+    "up_win_id": {
+        "bundle": "resources"
+    },
+    "up_win_zh_cn": {
+        "bundle": "resources"
+    },
+    "up_win_zh_tw": {
+        "bundle": "resources"
     }
 }

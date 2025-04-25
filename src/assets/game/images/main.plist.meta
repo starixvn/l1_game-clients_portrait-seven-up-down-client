@@ -855,7 +855,7 @@
         "rawHeight": 57,
         "borderTop": 0,
         "borderBottom": 0,
-        "borderLeft": 0,
+        "borderLeft": 2,
         "borderRight": 0,
         "packable": true,
         "pixelsToUnit": 100,
