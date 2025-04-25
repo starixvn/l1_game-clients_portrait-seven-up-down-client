@@ -38,7 +38,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 22
+      "__id__": 23
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -170,7 +170,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@46de1",
+      "__uuid__": "7a6e585b-8eca-4909-ad49-8f8368e1cdb7@67081",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -412,6 +412,9 @@
       },
       {
         "__id__": 21
+      },
+      {
+        "__id__": 22
       }
     ],
     "_id": ""
@@ -422,17 +425,25 @@
   },
   {
     "__type__": "LedLightItemModel",
-    "choiceNames": "odd",
+    "choiceNames": "up",
     "backgroundForChoice": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@46de1",
+      "__uuid__": "7a6e585b-8eca-4909-ad49-8f8368e1cdb7@02b72",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
   {
     "__type__": "LedLightItemModel",
-    "choiceNames": "even",
+    "choiceNames": "down",
     "backgroundForChoice": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@a8b4d",
+      "__uuid__": "7a6e585b-8eca-4909-ad49-8f8368e1cdb7@88cee",
+      "__expectedType__": "cc.SpriteFrame"
+    }
+  },
+  {
+    "__type__": "LedLightItemModel",
+    "choiceNames": "seven",
+    "backgroundForChoice": {
+      "__uuid__": "7a6e585b-8eca-4909-ad49-8f8368e1cdb7@67081",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
