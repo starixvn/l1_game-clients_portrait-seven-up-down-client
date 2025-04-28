@@ -621,7 +621,7 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "a2a8dd9c-463b-4330-b1bd-a7950eb36204",
+      "__uuid__": "cc91d205-dbd3-4fc8-ab9a-7a83ac8185ed",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
@@ -1551,7 +1551,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 150.25900000000001,
+      "y": 170,
       "z": 0
     },
     "_lrot": {

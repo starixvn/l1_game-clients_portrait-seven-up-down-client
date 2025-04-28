@@ -108,8 +108,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -115,
-      "y": 30,
+      "x": -270.616,
+      "y": -118.18600000000004,
       "z": 0
     },
     "_lrot": {
@@ -375,7 +375,7 @@
       "__uuid__": "dbaf6649-329d-4d3f-a697-72d2850968cd",
       "__expectedType__": "sp.SkeletonData"
     },
-    "defaultSkin": "",
+    "defaultSkin": "default",
     "defaultAnimation": "",
     "_premultipliedAlpha": false,
     "_timeScale": 1,
@@ -828,8 +828,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": -130,
+      "x": 69.98899999999998,
+      "y": -146.12200000000007,
       "z": 0
     },
     "_lrot": {
@@ -1548,8 +1548,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 110,
-      "y": 30,
+      "x": 276.131,
+      "y": -118.40500000000009,
       "z": 0
     },
     "_lrot": {
@@ -2286,6 +2286,7 @@
     "__type__": "f18a7p/0A9GNYpWnsRi4iNE",
     "_name": "",
     "_objFlags": 0,
+    "__editorExtras__": {},
     "node": {
       "__id__": 1
     },
@@ -2338,7 +2339,6 @@
       "__id__": 0
     },
     "fileId": "c46/YsCPVOJYA4mWEpNYRx",
-    "instance": null,
     "targetOverrides": null
   }
 ]

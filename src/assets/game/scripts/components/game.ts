@@ -38,18 +38,6 @@ export default class Game extends GameComponent {
     @property(sp.Skeleton)
     spineExtraPaid: sp.Skeleton = null;
 
-    @property(Vec3)
-    positionDiceCupDefault: Vec3 = null;
-
-    @property(Vec3)
-    positionShowDiceCup: Vec3 = null;
-
-    @property(Vec3)
-    scaleDiceCupSettlement: Vec3 = null;
-
-    @property(Vec3)
-    scaleDiceCupDefault: Vec3 = null;
-
     @property({ type: Node })
     betItemsNode: Node = null;
 
@@ -108,7 +96,6 @@ export default class Game extends GameComponent {
 
     async showResult(result: ISevenUpDownResult, hasAnimation: boolean, settlementResult: gc.GameServiceMessage.TSettlementResult) {
         if (result) {
-            console.log("result", result);
             this.resultComp?.setResultTextVisibility(false);
             if (hasAnimation) {
                 await this.handleAnimResult(result, this.roundId, settlementResult);
@@ -126,7 +113,6 @@ export default class Game extends GameComponent {
         const extraPayMessageDelayTime = multiplier ? this.SHOW_EXTRA_PAY_DURATION : 0;
         const multiplierDelayTime = multiplier ? this.SHOW_MULTIPLIER_DURATION : 0;
         this.multiplierComp?.resetMultiplier(false);
-        console.log('handleAnimResult', this.betItemsComp);
         this.betItemsComp.clearHighlightAnim();
         const tweenSequence = tween(this.node)
             .call(() => {
@@ -164,7 +150,7 @@ export default class Game extends GameComponent {
                 })
                 .call(()=> resolve())
                 .start();
-            this.resultComp.playHighLight();
+            //this.resultComp.playHighLight();
         });
 
         this.isFinishDiceAnim = true;

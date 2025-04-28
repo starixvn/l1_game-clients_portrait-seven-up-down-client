@@ -1,4 +1,4 @@
-import { _decorator, Component, Sprite, SpriteFrame, Tween, Node, UIOpacity } from 'cc';
+import { _decorator, Component, Sprite, SpriteFrame, Tween, Node, UIOpacity, UITransform } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass
@@ -37,9 +37,7 @@ export class SevenUpDownDice extends Component {
     }
 
     runAnimation(resultDiceFrames: SpriteFrame[], duration: number) {
-        console.log('runAnimation', resultDiceFrames);
         if (!this.diceSprite) return;
-        console.log('runAnimation 2', this.diceSprite);
         let index = 0;
         const diceFramesNumber = resultDiceFrames.length;
 
