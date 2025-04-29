@@ -6,33 +6,25 @@ const { ccclass, property } = _decorator;
 
 @ccclass()
 export class SeDieHistoryResultBodyItem extends BaseResultBodyItem {
-    @property(Sprite)
-    dot: Sprite = null;
+    @property([Sprite])
+   dices: Sprite[] = [];
 
-    @property(Label)
-    result: Label = null;
+   @property(Label)
+   total: Label = null;
 
-    @property(SpriteFrame)
-    sprOdd: SpriteFrame = null;
+   @property([SpriteFrame])
+   dicesSpriteFrames: SpriteFrame[] = [];
 
-    @property(SpriteFrame)
-    sprEven: SpriteFrame = null;
+   setData(result: gc.BetHistory.DynamicObject<object>, settlementResult: gc.BetHistory.DynamicObject<boolean>) {
+       this.showDiceResult(result, this.dicesSpriteFrames);
+   }
 
-    setData(result: gc.BetHistory.DynamicObject<object>, settlementResult: gc.BetHistory.DynamicObject<boolean>) {
-        let number = 0;
-        Object.keys(result).forEach((key) => {
-            if (result[key]) {
-                number++;
-            }
-        });
-
-        this.result.string = number.toString();
-        if (number % 2) {
-            this.dot.spriteFrame = this.sprOdd;
-            this.result.color = Color.WHITE;
-        } else {
-            this.dot.spriteFrame = this.sprEven;
-            this.result.color = Color.BLACK;
-        }
-    }
+   showDiceResult(result: any, dicesSpriteFrames: SpriteFrame[]) {
+    console.log("result", result);
+       this.dices[0].spriteFrame = dicesSpriteFrames[result.dice1 - 1];
+       this.dices[1].spriteFrame = dicesSpriteFrames[result.dice2 - 1];
+       const total = result.dice1 + result.dice2;
+       const text = total > 10 ? `Trên` : `-${total}`;
+       this.total.string = `${total} -`;
+   }
 }

@@ -7,7 +7,6 @@
 	{
 		"name": "dice-1",
 		"parent": "move-updowndice-1",
-		"rotation": 90.55,
 		"x": 76.28,
 		"y": -221.93,
 		"scaleX": 0.8,
@@ -19,7 +18,6 @@
 	{
 		"name": "dice-2",
 		"parent": "move-updown-dice-2",
-		"rotation": 90.55,
 		"x": 74.25,
 		"y": -277.14,
 		"scaleX": 0.8,
