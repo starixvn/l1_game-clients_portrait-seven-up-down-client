@@ -18,7 +18,6 @@ export class bet_history_seven_up_down_body_item extends BetHistoryNewBodyItem {
         if(settlementResult) {
             Object.keys(settlementResult).forEach(choice => {
                 let stake = data.betHistoryLog[choice];
-                console.log("stake", stake);
                 if(+stake > 0) {
                     const odd = this.getFormatOdd(odds[choice]?.toString(), data?.fractionalOddsFormat);
                     this.handleBetOptionItem(choice, odd);
@@ -32,7 +31,9 @@ export class bet_history_seven_up_down_body_item extends BetHistoryNewBodyItem {
     }
 
     handleBetOptionItem(choice: string, odd: string) {
-        if (choice === "seven") {
+        console.log("choice", choice);
+        console.log("BetChoice.SEVEN", choice.includes("seven"));
+        if (choice.includes("seven")) {
             this.lblBet.string = `${gc.Translator.gameTranslate(`glossary_${BetChoice.SEVEN}`)} @ ${odd}`;
         } else {
             this.lblBet.string = `${gc.Translator.gameTranslate(`glossary_${choice}`)} @ ${odd}`;
