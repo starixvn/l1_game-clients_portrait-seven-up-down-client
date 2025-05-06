@@ -12,6 +12,7 @@ import { ISevenUpDownResult } from "../seven-up-down-choices";
 import SevenUpDownMultiplier from "../multiplier/seven-up-down-multiplier";
 import { findWinningChoice } from "../seven-up-down-helper";
 import SevenUpDownBetItems from "../seven-up-down-bet-items";
+import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
 
 const { Rounds, Translator, RoundHistories, UserSettings, DisabledGame } = gc;
 
@@ -40,6 +41,9 @@ export default class Game extends GameComponent {
 
     @property({ type: Node })
     betItemsNode: Node = null;
+
+    @property(ChipFlying)
+    chipFlying: ChipFlying = null;
 
     public resultComp: SevenUpDownResult = null;
 
@@ -99,6 +103,7 @@ export default class Game extends GameComponent {
             this.resultComp?.setResultTextVisibility(false);
             if (hasAnimation) {
                 await this.handleAnimResult(result, this.roundId, settlementResult);
+                this.chipFlying.callActionPayChips();
             }
         }
     }
@@ -220,7 +225,6 @@ export default class Game extends GameComponent {
 
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
     async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
-        console.log('renderStaticResult',this.disabledGame, firstJoinGameHistory);
         if (!firstJoinGameHistory) return null;
         this.resultComp?.showResultNoAnim(this.histories[1]?.result, this.histories[1]?.roundId);
         const { animationHighlight, roundTime, roundHistory: lastRound } = firstJoinGameHistory;
