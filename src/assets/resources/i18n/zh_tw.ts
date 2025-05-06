@@ -208,6 +208,7 @@ export const languages = {
         "glossary_7": "7",
         "glossary_down": "下",
         "glossary_up": "上",
+        "glossary_multiplier": "乘數",
         "up_win": "上贏"
     },
 };

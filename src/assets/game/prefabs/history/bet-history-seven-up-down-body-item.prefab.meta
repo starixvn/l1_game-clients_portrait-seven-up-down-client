@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "6b791b36-2b68-4f99-84ab-052c67217bd6",
+  "uuid": "41ac7bd2-c2ef-4136-86f8-62dc7175e367",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "bet-history-header"
+    "syncNodeName": "bet-history-seven-up-down-body-item"
   }
 }

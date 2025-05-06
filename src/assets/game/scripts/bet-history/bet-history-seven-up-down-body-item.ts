@@ -31,8 +31,6 @@ export class bet_history_seven_up_down_body_item extends BetHistoryNewBodyItem {
     }
 
     handleBetOptionItem(choice: string, odd: string) {
-        console.log("choice", choice);
-        console.log("BetChoice.SEVEN", choice.includes("seven"));
         if (choice.includes("seven")) {
             this.lblBet.string = `${gc.Translator.gameTranslate(`glossary_${BetChoice.SEVEN}`)} @ ${odd}`;
         } else {

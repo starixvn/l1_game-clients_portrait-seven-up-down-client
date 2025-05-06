@@ -208,6 +208,7 @@ export const languages = {
         "glossary_7": "7",
         "glossary_down": "Dưới",
         "glossary_up": "Trên",
+        "glossary_multiplier": "Hệ Số Nhân",
         "up_win": "TRÊN 7 THẮNG"
     },
 };

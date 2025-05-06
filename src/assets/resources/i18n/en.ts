@@ -208,6 +208,7 @@ export const languages = {
         "glossary_7": "7",
         "glossary_down": "Down",
         "glossary_up": "Up",
+        "glossary_multiplier": "Multiplier",
         "up_win": "UP WINS"
     },
 };

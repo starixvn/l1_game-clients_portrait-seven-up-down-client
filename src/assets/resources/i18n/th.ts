@@ -208,6 +208,7 @@ export const languages = {
         "glossary_7": "7",
         "glossary_down": "ลง",
         "glossary_up": "ขึ้น",
+        "glossary_multiplier": "ตัวคูณ",
         "up_win": "สูงชนะ"
     },
 };

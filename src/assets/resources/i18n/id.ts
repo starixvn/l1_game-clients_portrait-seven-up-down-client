@@ -208,6 +208,7 @@ export const languages = {
         "glossary_7": "7",
         "glossary_down": "Turun",
         "glossary_up": "Naik",
+        "glossary_multiplier": "Pengali",
         "up_win": "NAIK MENANG"
     },
 };
