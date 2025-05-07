@@ -2312,6 +2312,12 @@
     "lblChoice": {
       "__id__": 32
     },
+    "lblDate": {
+      "__id__": 23
+    },
+    "lblHour": {
+      "__id__": 17
+    },
     "lblMultiplier": {
       "__id__": 62
     },

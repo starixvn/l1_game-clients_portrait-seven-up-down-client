@@ -3,6 +3,7 @@ import BetDetailLogItem, { GameRoundBetDetailsLog } from 'db://shared-components
 import { BetDetailLogItemType } from 'db://shared-components/game/bet-history/scripts/components/bet-detail/bet-detail-log-item';
 import gc from "@sg/game-client-base";
 import { BetChoice } from '../../seven-up-down-choices';
+import BetDetailDirectBodyItem from 'db://direct-shared-components/bet-history/scripts/bet-detail-direct-body-item';
 
 const { Translator } = gc;
 const { ccclass, property } = _decorator;
@@ -13,7 +14,7 @@ export interface Multiplier {
 }
 
 @ccclass('bet_detail_body_item')
-export class bet_detail_body_item extends BetDetailLogItem {
+export class bet_detail_body_item extends BetDetailDirectBodyItem {
     @property(Label)
     lblMultiplier: Label = null;
 
