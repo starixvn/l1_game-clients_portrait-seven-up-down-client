@@ -5,8 +5,8 @@ import { BetChoice } from "../seven-up-down-choices";
 
 const { ccclass, property } = _decorator;
 
-@ccclass("result_body_item")
-export class result_body_item extends BaseResultBodyItem {
+@ccclass
+export class ResultBodyItem extends BaseResultBodyItem {
     @property([Sprite])
     dices: Sprite[] = [];
 
@@ -32,6 +32,7 @@ export class result_body_item extends BaseResultBodyItem {
         } else {
             lblBetChoice = `${gc.Translator.gameTranslate(`glossary_${winChoice}`)}`;
         }
+        
         this.total.string = `${result.dice1 + result.dice2} - ${lblBetChoice}`;
     }
 }

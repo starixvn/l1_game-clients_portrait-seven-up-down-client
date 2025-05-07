@@ -13,8 +13,8 @@ export interface Multiplier {
     value: number;
 }
 
-@ccclass('bet_detail_body_item')
-export class bet_detail_body_item extends BetDetailDirectBodyItem {
+@ccclass
+export class BetDetailBodyItem extends BetDetailDirectBodyItem {
     @property(Label)
     lblMultiplier: Label = null;
 

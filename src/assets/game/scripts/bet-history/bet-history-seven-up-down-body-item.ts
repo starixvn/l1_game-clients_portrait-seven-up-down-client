@@ -5,8 +5,8 @@ import { BetHistoryBodyItemType } from 'db://shared-components/game/bet-history/
 import { BetChoice } from "../seven-up-down-choices";
 const { ccclass, property } = _decorator;
 
-@ccclass('bet_history_seven_up_down_body_item')
-export class bet_history_seven_up_down_body_item extends BetHistoryNewBodyItem {
+@ccclass
+export class BetHistorySevenUpDownBodyItem extends BetHistoryNewBodyItem {
     @property(Label)
     lblBet: Label = null;
 
