@@ -7,8 +7,8 @@ import { SevenUpDownRoundResultItem } from "./seven-up-down-round-result-item";
 const { ccclass, property } = _decorator;
 const { render } = Observer;
 
-@ccclass('SevenUpDownDiceStatistic')
-export class SevenUpDownDiceStatistic extends ObserverComponent {
+@ccclass('SevenUpDownRoundHistory')
+export class SevenUpDownRoundHistory extends ObserverComponent {
     @property(Prefab)
     roundResultPrefab: Prefab = null;
 

@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "b47918e8-ccb2-4986-a0bc-fd0863d6ef54",
+  "uuid": "ed27849f-3adb-46ae-84ad-6ea83cf0cbcb",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "sample-round-result-item"
+    "syncNodeName": "seven-up-down-score-board"
   }
 }
