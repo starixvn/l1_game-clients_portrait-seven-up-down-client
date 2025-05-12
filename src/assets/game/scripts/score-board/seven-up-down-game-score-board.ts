@@ -33,7 +33,7 @@ export class SevenUpDownGameScoreBoard extends ObserverComponent {
     private isExpandHistory = false;
 
     private readonly WIDTH_COLLAPSE_HISTORY = 150;
-    private readonly WIDTH_SPACING = 32;
+    private readonly WIDTH_SPACING = 28;
     private readonly WIDTH_GAME = 828;
 
     private updateNodeWidths(expandedNode: Node, collapsedNode: Node) {
