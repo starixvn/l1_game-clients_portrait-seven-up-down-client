@@ -63,8 +63,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": 1,
+      "y": -83.484,
       "z": 0
     },
     "_lrot": {
@@ -271,8 +271,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -2,
-      "y": 74,
+      "x": 0.8158455455751898,
+      "y": 74.30699067978075,
       "z": 0
     },
     "_lrot": {
@@ -312,8 +312,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
-      "height": 147
+      "width": 185.63169109115037,
+      "height": 146.3860186404385
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -407,7 +407,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -1.7090000000000032,
+      "x": 2.2793583882189195,
       "y": 90.37199999999996,
       "z": 0
     },
@@ -448,7 +448,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 183.5,
+      "width": 191.47671677643785,
       "height": 100.95
     },
     "_anchorPoint": {
@@ -516,6 +516,8 @@
       "__id__": 0
     },
     "fileId": "94zg2oi2FKwLwwtAwA7QLO",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1269,8 +1271,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.9135000000000031,
-      "y": 50.686000000000035,
+      "x": 1.2792905698625234,
+      "y": 52.83745520739618,
       "z": 0
     },
     "_lrot": {
@@ -1310,8 +1312,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 189.091,
-      "height": 79.371
+      "width": 193.47658113972506,
+      "height": 83.67391041479229
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1405,8 +1407,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.9829999999999999,
-      "y": 121.4815,
+      "x": 0.5509452193314184,
+      "y": 122.58353639418543,
       "z": 0
     },
     "_lrot": {
@@ -1446,8 +1448,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 174.034,
-      "height": 184.261
+      "width": 177.10189043866282,
+      "height": 186.46507278837086
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1940,7 +1942,6 @@
       "__id__": 0
     },
     "fileId": "c46/YsCPVOJYA4mWEpNYRx",
-    "instance": null,
     "targetOverrides": null
   }
 ]
