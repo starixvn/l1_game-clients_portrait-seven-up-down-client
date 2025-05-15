@@ -408,7 +408,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 2.2793583882189195,
-      "y": 90.37199999999996,
+      "y": 86.32602011189726,
       "z": 0
     },
     "_lrot": {
@@ -449,7 +449,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 191.47671677643785,
-      "height": 100.95
+      "height": 113.94953687584673
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1272,7 +1272,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 1.2792905698625234,
-      "y": 52.83745520739618,
+      "y": 47.52528011894455,
       "z": 0
     },
     "_lrot": {
@@ -1313,7 +1313,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 193.47658113972506,
-      "height": 83.67391041479229
+      "height": 73.04956023788903
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1380,8 +1380,6 @@
       "__id__": 0
     },
     "fileId": "7bvMI9HX9M24ymjs3V6pdg",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1550,7 +1548,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": -3.622,
       "y": 170,
       "z": 0
     },
@@ -1600,8 +1598,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": -7.123,
+      "y": 0.0009999999999998899,
       "z": 0
     },
     "_lrot": {
@@ -1641,7 +1639,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 189.94140625,
+      "width": 189.9814453125,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1677,11 +1675,11 @@
       "b": 255,
       "a": 255
     },
-    "_string": "11 - TRÊN",
+    "_string": "10 - UP",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 40,
-    "_fontSize": 40,
+    "_actualFontSize": 57,
+    "_fontSize": 57,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
     "_overflow": 0,
@@ -1735,8 +1733,6 @@
       "__id__": 0
     },
     "fileId": "7eXZOTVatJ76N1SSKx4tzg",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1840,8 +1836,6 @@
       "__id__": 0
     },
     "fileId": "abtS3aifFKPYgDCnY7I0i9",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
