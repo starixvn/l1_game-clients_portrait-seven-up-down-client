@@ -109,6 +109,51 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>bet-option-hotdog.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{254,330}</string>
+                <key>spriteSourceSize</key>
+                <string>{254,330}</string>
+                <key>textureRect</key>
+                <string>{{540,334},{254,330}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>bet-option-lastround-hotdog.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{254,330}</string>
+                <key>spriteSourceSize</key>
+                <string>{254,330}</string>
+                <key>textureRect</key>
+                <string>{{0,664},{254,330}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>bet-option-lastround.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{254,330}</string>
+                <key>spriteSourceSize</key>
+                <string>{254,330}</string>
+                <key>textureRect</key>
+                <string>{{254,664},{254,330}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>bet-option-main-highlight.png</key>
             <dict>
                 <key>aliases</key>
@@ -120,7 +165,7 @@
                 <key>spriteSourceSize</key>
                 <string>{282,330}</string>
                 <key>textureRect</key>
-                <string>{{0,419},{282,330}}</string>
+                <string>{{508,664},{282,330}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -135,7 +180,7 @@
                 <key>spriteSourceSize</key>
                 <string>{282,330}</string>
                 <key>textureRect</key>
-                <string>{{282,419},{282,330}}</string>
+                <string>{{0,994},{282,330}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -150,7 +195,7 @@
                 <key>spriteSourceSize</key>
                 <string>{282,330}</string>
                 <key>textureRect</key>
-                <string>{{564,419},{282,330}}</string>
+                <string>{{282,994},{282,330}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -214,6 +259,36 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>bet-option-sub-hotdog.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{234,172}</string>
+                <key>spriteSourceSize</key>
+                <string>{234,172}</string>
+                <key>textureRect</key>
+                <string>{{0,334},{234,172}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>bet-option-sub-lastround-hotdog.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{234,172}</string>
+                <key>spriteSourceSize</key>
+                <string>{234,172}</string>
+                <key>textureRect</key>
+                <string>{{234,334},{234,172}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>bet-option-sub-lastround.png</key>
             <dict>
                 <key>aliases</key>
@@ -241,6 +316,21 @@
                 <string>{252,164}</string>
                 <key>textureRect</key>
                 <string>{{655,170},{252,164}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>bet-option.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{254,330}</string>
+                <key>spriteSourceSize</key>
+                <string>{254,330}</string>
+                <key>textureRect</key>
+                <string>{{564,994},{254,330}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -315,7 +405,7 @@
                 <key>spriteSourceSize</key>
                 <string>{32,194}</string>
                 <key>textureRect</key>
-                <string>{{907,170},{32,194}}</string>
+                <string>{{468,334},{32,194}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -375,7 +465,7 @@
                 <key>spriteSourceSize</key>
                 <string>{40,249}</string>
                 <key>textureRect</key>
-                <string>{{939,170},{40,249}}</string>
+                <string>{{500,334},{40,249}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -811,9 +901,9 @@
             <key>realTextureFileName</key>
             <string>main.png</string>
             <key>size</key>
-            <string>{1002,749}</string>
+            <string>{1002,1324}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a5b60f21907a315dc6faa16fe6b0eb25:8bd22f108a00199015afcc9be785020f:693584bbba79ecadf35d6b2cf3a849c9$</string>
+            <string>$TexturePacker:SmartUpdate:18db6c5673cab9f54059e28c56d07fea:6c6a18ac6814bc58d2598a21e938bf71:693584bbba79ecadf35d6b2cf3a849c9$</string>
             <key>textureFileName</key>
             <string>main.png</string>
         </dict>
