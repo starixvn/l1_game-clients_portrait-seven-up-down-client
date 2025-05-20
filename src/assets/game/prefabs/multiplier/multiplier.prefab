@@ -828,7 +828,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 78.781,
+      "x": 75.22,
       "y": -215.025,
       "z": 0
     },
@@ -987,8 +987,6 @@
       "__id__": 0
     },
     "fileId": "b2HaLvnqJLhqWE9GbyOuv1",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1096,7 +1094,7 @@
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
-    "defaultAnimation": "",
+    "defaultAnimation": "<None>",
     "_premultipliedAlpha": false,
     "_timeScale": 1,
     "_preCacheMode": 0,
@@ -1123,8 +1121,6 @@
       "__id__": 0
     },
     "fileId": "c77G1DiMNMFoeU0NOYpoh2",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
