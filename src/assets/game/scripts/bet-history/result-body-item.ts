@@ -25,14 +25,9 @@ export class ResultBodyItem extends BaseResultBodyItem {
         this.dices[1].spriteFrame = dicesSpriteFrames[result.dice2 - 1];
         const winChoice = ["up", "down", "seven"].find((choice) => settlementResult[choice]);
 
-        let lblBetChoice = "";
+        const total = result.dice1 + result.dice2;
+        const lblBetChoice = gc.Translator.gameTranslate(`glossary_${winChoice === "seven" ? BetChoice.SEVEN : winChoice}`);
 
-        if (winChoice.includes("seven")) {
-            lblBetChoice = `${gc.Translator.gameTranslate(`glossary_${BetChoice.SEVEN}`)}`;
-        } else {
-            lblBetChoice = `${gc.Translator.gameTranslate(`glossary_${winChoice}`)}`;
-        }
-        
-        this.total.string = `${result.dice1 + result.dice2} - ${lblBetChoice}`;
+        this.total.string = winChoice === "seven" ? "7" : `${total} - ${lblBetChoice}`;
     }
 }
