@@ -844,6 +844,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>white-color.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{2,2}</string>
+                <key>spriteSourceSize</key>
+                <string>{2,2}</string>
+                <key>textureRect</key>
+                <string>{{137,999},{2,2}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -858,7 +873,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0ced4eb67bbeec5fdc38c90e8dd1fcb1:66cb7b0d483e6b4d57532772411ac5e3:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <string>$TexturePacker:SmartUpdate:8a94bb1fe4883668b93e1cbbaf7ab06c:ca901d1ab0323378411c17968276ab52:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
             <key>textureFileName</key>
             <string>main.webp</string>
         </dict>
