@@ -6176,7 +6176,7 @@
       "resultContentPrefab"
     ],
     "value": {
-      "__uuid__": "3ab1bc13-0ddf-4edf-a4bc-79b02d37e214",
+      "__uuid__": "3e482741-f39b-4235-a770-65ac63d4619f",
       "__expectedType__": "cc.Prefab"
     }
   },
@@ -6613,7 +6613,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 392

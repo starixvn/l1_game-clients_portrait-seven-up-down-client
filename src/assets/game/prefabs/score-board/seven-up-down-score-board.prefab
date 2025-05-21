@@ -3500,7 +3500,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1,
+      "width": 2,
       "height": 194
     },
     "_anchorPoint": {
@@ -6310,7 +6310,6 @@
       "__id__": 0
     },
     "fileId": "74heiL71RGzqfXYaHTTdVc",
-    "instance": null,
     "targetOverrides": [
       {
         "__id__": 288
