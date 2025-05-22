@@ -226,23 +226,29 @@ export default class Game extends GameComponent {
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
     async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
         if (!firstJoinGameHistory) return null;
+
         this.resultComp?.showResultNoAnim(this.histories[1]?.result, this.histories[1]?.roundId);
+
         const { animationHighlight, roundTime, roundHistory: lastRound } = firstJoinGameHistory;
+
         if (!lastRound || roundTime < 0) return null;
 
         const { result: rawResult, roundId, settlementResult } = lastRound;
+
         const result = this.convertToSevenUpDownResult(rawResult);
         if (this.disabledGame) {
             this.resultComp?.showResultNoAnim(result, roundId);
             this.resultComp?.showResultText(result);
             return null;
         }
+
         // Show static result and multiplier if animation highlight is enabled
         if (animationHighlight && !this.isPlayAnimSettlement) {
             this.resultComp?.showResultText(result);
             this.multiplierComp?.renderMultiplier(result?.multiplier, false);
             this.betItemsComp.highlightBetItems(settlementResult);
         }
+
         // Handle animations or static display
         if (animationHighlight && roundTime > settings.durations.wholeRound - this.TOTAL_SHOW_ANIM_DURATION && !this.isPlayAnimSettlement) {
             await this.showResultAnim(result, roundId, result);
@@ -269,6 +275,7 @@ export default class Game extends GameComponent {
         if (!this.multiplierComp || !this.resultComp) {
             return;
         }
+        
         this.multiplierComp.resetMultiplier(animated);
         this.resultComp.setResultTextVisibility(false);
     }
