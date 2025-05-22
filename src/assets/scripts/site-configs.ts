@@ -21,15 +21,15 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     enableMsgpackParserAllGames: false,
     enableMsgpackParserOnNotification: false,
     websocket: {
-        proxyPath: "sevenupdown",
-        route: "sevenupdown",
+        proxyPath: "roulette",
+        route: "roulette",
     },
     websocketOptions: {
         timeout: 3000,
     },
-    mainObserverNamespace: "SevenUpDown",
+    mainObserverNamespace: "Roulette",
     tolgeeUrl: "",
-    storagePrefixKey: "portrait_seven_up_down",
+    storagePrefixKey: "portrait_roulette",
     backgroundNoTranslate: true,
 };
 

@@ -1,1 +1,1 @@
-window.crossConfig = { backgroundLocalized: false, storagePrefixKey: "portrait_seven_up_down" };
+window.crossConfig = { backgroundLocalized: false, storagePrefixKey: "portrait_roulette" };
