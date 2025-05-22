@@ -32,7 +32,7 @@ export class SevenUpDownRoundResultItem extends Component {
         Object.keys(result).forEach((key) => {
             if (key === 'multiplier') {
                 this.nodeMultiplier.active = true;
-                this.nodeMultiplier.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(`${result[key].value}x`);
+                this.nodeMultiplier.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(`${result[key]?.value}x`);
             }
 
             const dice = this.dices.find((item) => item.name === key);
