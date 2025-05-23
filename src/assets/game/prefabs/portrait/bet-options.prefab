@@ -2055,7 +2055,7 @@
     "spriteList": [],
     "usingRawSize": true,
     "atlas": {
-      "__uuid__": "bb789792-b1b7-476f-97e6-4a034a45a4f2",
+      "__uuid__": "7a6e585b-8eca-4909-ad49-8f8368e1cdb7",
       "__expectedType__": "cc.SpriteAtlas"
     },
     "prefix": "table-text-up",
@@ -6150,7 +6150,7 @@
     "spriteList": [],
     "usingRawSize": true,
     "atlas": {
-      "__uuid__": "bb789792-b1b7-476f-97e6-4a034a45a4f2",
+      "__uuid__": "7a6e585b-8eca-4909-ad49-8f8368e1cdb7",
       "__expectedType__": "cc.SpriteAtlas"
     },
     "prefix": "table-text-down",
@@ -6435,6 +6435,7 @@
       "__id__": 0
     },
     "fileId": "aeW3ULgKdDtqqKK8Y8rX1T",
+    "instance": null,
     "targetOverrides": []
   }
 ]

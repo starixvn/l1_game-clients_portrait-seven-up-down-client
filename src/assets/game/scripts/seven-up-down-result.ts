@@ -28,9 +28,6 @@ export class SevenUpDownResult extends Component {
     @property({ type: Label })
     lblResult: Label | null = null;
 
-    @property(Sprite)
-    resultBg: Sprite | null = null;
-
     private resultDiceFrames: IResultDiceFrames = { dice1: [], dice2: [] };
     private diceSpriteFrames: SpriteFrame[] = [];
     private readonly DICE_POSITION_NUMBER = 7;
@@ -77,21 +74,6 @@ export class SevenUpDownResult extends Component {
             const frame = this.diceSpriteFrames.find((spriteFrame) => spriteFrame.name === `end-${endPos}-${this.DICE_END_FRAME}`);
             if (frame) dice.setFrame(frame);
         });
-    }
-
-    playHighLight() {
-        const uiOpacity = this.resultBg.getComponent(UIOpacity);
-        tween(this.resultBg.node)
-            .to(0.4, { scale: v3(1.08, 1.08, 1) })
-            .call(() => {
-                uiOpacity.opacity = 255;
-            })
-            .delay(3)
-            .to(0.4, { scale: v3(1, 1, 1) })
-            .call(() => {
-                uiOpacity.opacity = 0;
-            })
-            .start();
     }
 
     setResultTextVisibility(isShow: boolean) {
