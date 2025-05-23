@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "custom-game-guide-direct-container",
+    "_name": "game-guide-direct-container",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "custom-game-guide-direct-container",
+    "_name": "game-guide-direct-container",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -28,16 +28,10 @@
       },
       {
         "__id__": 6
-      },
-      {
-        "__id__": 8
-      },
-      {
-        "__id__": 10
       }
     ],
     "_prefab": {
-      "__id__": 12
+      "__id__": 8
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -155,45 +149,6 @@
     "fileId": "a0y7cAt99AfberV41QafkN"
   },
   {
-    "__type__": "b2e22DJkwFIHIMjsmiCJcpb",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 9
-    },
-    "bundleName": "resources",
-    "path": "prefabs/",
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "8beiCaYFVFBI/idBuX3eTZ"
-  },
-  {
-    "__type__": "d67aej5PthCXJ6NSGuV1aM9",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 11
-    },
-    "prefab": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "9ftPkrgM5DMp+EhXNBgaRj"
-  },
-  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -202,6 +157,7 @@
       "__id__": 0
     },
     "fileId": "79NnDBNH5P7r0OERecUxd+",
+    "instance": null,
     "targetOverrides": null
   }
 ]
