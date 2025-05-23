@@ -8,6 +8,7 @@ export const settings = {
     id: 103,
     name: "SevenUpDown",
     namespaces: ["7Up7Down"],
+    observerNamespace: "SevenUpDown",
     durations: {
         wholeRound: 33,
         lockingBet: 3,
