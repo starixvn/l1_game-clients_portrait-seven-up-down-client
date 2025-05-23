@@ -4,7 +4,7 @@ import SevenUpDownMultiplierChoice from "./seven-up-down-multiplier-choice";
 import { ObserverComponent } from "../../../../extensions/shared-components/assets/shared/common-components/observer-component/scripts/observer-component";
 const { ccclass, property } = _decorator;
 const { render } = Observer;
-import { SevenUpDownGameConfigStore } from "../game-config/index";
+import { RouletteGameConfigStore } from "../game-config/index";
 
 @ccclass()
 export default class SevenUpDownMultiplier extends ObserverComponent {
@@ -17,7 +17,7 @@ export default class SevenUpDownMultiplier extends ObserverComponent {
         this.resetMultiplier(false);
     }
 
-    @render(SevenUpDownGameConfigStore, (store) => store.multipliers, { fireImmediately: true })
+    @render(RouletteGameConfigStore, (store) => store.multipliers, { fireImmediately: true })
     updateMultiplierConfigs(multipliers: Array<number>) {
         this.multipliersConfigs = multipliers;
     }

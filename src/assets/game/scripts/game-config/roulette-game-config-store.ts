@@ -5,7 +5,7 @@ const { injectable } = inversify;
 const { makeAutoObservable } = mobx;
 
 @injectable()
-export class SevenUpDownGameConfigStore {
+export class RouletteGameConfigStore {
     private _multipliers : Array<number>;
 
     constructor() {

@@ -6,7 +6,7 @@ export namespace GameServiceMessage {
         static eventName = "match";
     }
 
-    export class SevenUpDownGameConfigs {
+    export class RouletteGameConfigs {
         multipliers: Array<number>;
 
         static eventName = "gameConfigs";
