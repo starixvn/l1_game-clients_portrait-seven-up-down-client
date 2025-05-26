@@ -46,7 +46,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -351.5,
-      "y": 751.754,
+      "y": 481.01099999999997,
       "z": 0
     },
     "_lrot": {
@@ -3178,7 +3178,7 @@
     "_target": null,
     "_left": 29,
     "_right": 0,
-    "_top": 15,
+    "_top": 38.98900000000003,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -3214,7 +3214,7 @@
     "_target": null,
     "_left": 29,
     "_right": 0,
-    "_top": 15,
+    "_top": 285.74300000000005,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -3243,6 +3243,7 @@
       "__id__": 0
     },
     "fileId": "65l+YerrZErKew1rtVfZ9W",
+    "instance": null,
     "targetOverrides": null
   }
 ]
