@@ -1,7 +1,7 @@
 import gc from "@sg/game-client-base";
 import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import { sharedContainer } from "../../scripts/shared-container";
-import * as SevenUpDownGameConfigFeature from "./game-config";
+import * as RouletteGameConfigFeature from "./game-config";
 import { FakeChipHandlers } from "db://shared-components/game/chip-flying-total-bets/scripts/handlers/fake-chip-handlers";
 
 export const settings = {
@@ -25,5 +25,5 @@ export const containerOptions: gc.IContainerOptions = {
         container.bind(LogStore).to(LogStore);
         container.bind(gc.Chips.ChipHandlers).to(FakeChipHandlers);
     },
-    features: [SevenUpDownGameConfigFeature, gc.RoundBasePF, ...gc.defaultFeatures, gc.BetDetailsNew],
+    features: [RouletteGameConfigFeature, gc.RoundBasePF, ...gc.defaultFeatures, gc.BetDetailsNew],
 };
