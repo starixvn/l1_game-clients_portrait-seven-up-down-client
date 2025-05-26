@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "8c437e6c-041b-4005-a7ab-070817f7b2e3",
+  "uuid": "a2ae8697-5d32-4ee3-9d1b-563e9285a2c5",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "bet-history-direct-container"
+    "syncNodeName": "custom-lazy-load-direct-container"
   }
 }
