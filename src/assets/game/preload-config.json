@@ -1,0 +1,10 @@
+{
+    "others": {
+        "resources": ["spines/multiplier", "spines/bg-multiplier", "spines/particle", "fonts/fnt_white", "fonts/font-multiplier"]
+    },
+    "localized": {
+        "resources": {
+            
+        }
+    }
+}
