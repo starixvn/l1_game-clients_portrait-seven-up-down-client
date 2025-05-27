@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "780b54e5-c75f-48e9-ac7e-e1e0d838c0ba",
+  "uuid": "3bdb9034-e23f-4b8b-8d2b-a5901f90b9ef",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "switch-view-button"
+    "syncNodeName": "roulette-stake-info"
   }
 }

@@ -105,7 +105,7 @@
                 <key>spriteSourceSize</key>
                 <string>{2,2}</string>
                 <key>textureRect</key>
-                <string>{{999,133},{2,2}}</string>
+                <string>{{1003,133},{2,2}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -375,7 +375,7 @@
                 <key>spriteSourceSize</key>
                 <string>{2,2}</string>
                 <key>textureRect</key>
-                <string>{{1003,133},{2,2}}</string>
+                <string>{{1007,133},{2,2}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -499,6 +499,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>total-stake-line.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{2,38}</string>
+                <key>spriteSourceSize</key>
+                <string>{2,38}</string>
+                <key>textureRect</key>
+                <string>{{999,133},{2,38}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>xeng-arrow-next.png</key>
             <dict>
                 <key>aliases</key>
@@ -543,7 +558,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:909a3651a58bdf3092224ab8ecd436e6:54074114a5f0e33bb45a25a1d8caa602:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <string>$TexturePacker:SmartUpdate:e98063a0264c61c5634fb5e2e945996f:14b30d040cfaacab42ccb0822ce28e27:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
             <key>textureFileName</key>
             <string>main.webp</string>
         </dict>
