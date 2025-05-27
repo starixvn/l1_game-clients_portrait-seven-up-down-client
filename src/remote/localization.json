@@ -1,18 +1,18 @@
 {
     "lobbyNames": {
-        "en": "SE DIE",
-        "id": "SE DIE",
-        "th": "SE DIE",
-        "vi": "XÓC ĐĨA",
-        "zh_cn": "色碟",
-        "zh_tw": "色碟"
-    },
-    "gameNames": {
-        "en": "Se Die",
-        "id": "Se Die",
-        "th": "Se Die",
-        "vi": "Xóc Đĩa",
-        "zh_cn": "色碟",
-        "zh_tw": "色碟"
-    }
+          "en": "7 UP 7 DOWN",
+          "id": "7 NAIK 7 TURUN",
+          "th": "7 ขึ้น 7 ลง",
+          "vi": "TRÊN 7 DƯỚI 7",
+          "zh_cn": "7 上 7 下",
+          "zh_tw": "7 上 7 下"
+     },
+     "gameNames": {
+          "en": "7 Up 7 Down",
+          "id": "7 Naik 7 Turun",
+          "th": "7 ขึ้น 7 ลง",
+          "vi": "Trên 7 Dưới 7",
+          "zh_cn": "7 上 7 下",
+          "zh_tw": "7 上 7 下"
+     }
 }

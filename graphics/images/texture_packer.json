@@ -9,7 +9,7 @@
                     "options": {
                         "params": ["--texture-format", "webp"],
                         "sheet_extension": "webp",
-                        "output_path": ["sedie"]
+                        "output_path": ["main"]
                     }
                 }
             ]
@@ -17,6 +17,7 @@
     ],
     "options": {
         "params": [
+            ["--webp-quality", 100],
             ["--maxrects-heuristics", "Best"],
             ["--scale-mode", "Smooth"],
             ["--pack-mode", "Best"],
