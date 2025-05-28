@@ -10,13 +10,13 @@ function writeFile(fileName: string, content: string, extension = "ts") {
 
 const languageFolder = "./src/assets/resources/i18n/";
 const languageCodes = ["en", "id", "th", "vi", "zh_cn", "zh_tw"];
-const namespaces = ["Common", "7Up7Down"];
+const namespaces = ["Common", "Roulette"];
 const tg = Tolgee().use(DevTools()).init({
     defaultLanguage: "en",
     availableLanguages: languageCodes,
     apiKey: "tgpak_gvpw45brha2xg3btoztxeytunvudc5dbn5twqodtonztc",
     apiUrl: "https://tolgee.sabagame.com/",
-    projectId: "5",
+    projectId: "21",
     defaultNs: "messages",
     ns: namespaces,
 });
