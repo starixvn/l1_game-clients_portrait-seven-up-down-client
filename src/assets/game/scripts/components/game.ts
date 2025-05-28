@@ -6,13 +6,12 @@ import Observer from "observer";
 import { AnimationUtils } from "../../../../extensions/shared-components/assets/shared/utils";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { containerOptions, settings } from "../game-settings";
-import "./../../../resources/i18n";
-import { SevenUpDownResult } from "../seven-up-down-result";
 import { ISevenUpDownResult } from "../seven-up-down-choices";
 import SevenUpDownMultiplier from "../multiplier/seven-up-down-multiplier";
 import { findWinningChoice } from "../seven-up-down-helper";
 import SevenUpDownBetItems from "../seven-up-down-bet-items";
 import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
+import { RouletteWheel } from "../roulette-wheel";
 
 const { Rounds, Translator, RoundHistories, UserSettings, DisabledGame } = gc;
 
@@ -45,7 +44,7 @@ export default class Game extends GameComponent {
     @property(ChipFlying)
     chipFlying: ChipFlying = null;
 
-    public resultComp: SevenUpDownResult = null;
+    public resultComp: RouletteWheel = null;
 
     betItemsComp: SevenUpDownBetItems = null;
 
@@ -77,7 +76,7 @@ export default class Game extends GameComponent {
     }
 
     fetchComponents() {
-        this.resultComp = this.resultNode?.getComponent(SevenUpDownResult);
+        this.resultComp = this.resultNode?.getComponent(RouletteWheel);
         this.betItemsComp = this.betItemsNode.getComponent(SevenUpDownBetItems);
     }
 
@@ -94,13 +93,13 @@ export default class Game extends GameComponent {
     @render(Rounds.RoundTimeStore, (store) => store.isInRoundTime)
     renderInRoundTime(isInRoundTime: boolean) {
         if (isInRoundTime && !this.isLoading) {
-            this.resultComp?.setResultTextVisibility(false);
+            // this.resultComp?.setResultTextVisibility(false);
         }
     }
 
     async showResult(result: ISevenUpDownResult, hasAnimation: boolean, settlementResult: gc.GameServiceMessage.TSettlementResult) {
         if (result) {
-            this.resultComp?.setResultTextVisibility(false);
+            // this.resultComp?.setResultTextVisibility(false);
             if (hasAnimation) {
                 await this.handleAnimResult(result, this.roundId, settlementResult);
                 this.chipFlying.callActionPayChips();
@@ -141,24 +140,34 @@ export default class Game extends GameComponent {
 
     async showResultAnim(result: gc.GameServiceMessage.TResult, roundId: number, settlementResult): Promise<void> {
         const prevResult = this.lastRound?.result;
-        this.resultComp.setResultTextVisibility(false);
+        // this.resultComp.setResultTextVisibility(false);
         this.betItemsComp.clearHighlightAnim();
         await new Promise<void>((resolve) => {
             tween(this.resultNode)
                 .call(() => {
-                    this.playStoppableSFX("dice_shake");
-                    this.resultComp?.showResultAnim(prevResult, result, roundId); // Show the result animation
+                    console.log("------showResult", result);
+                    // this.playStoppableSFX("dice_shake");
+                    this.resultComp?.showResult(+result, () => {
+                        tween(this.node)
+                            .delay(2)
+                            .call(() => this.hideRoulette())
+                            .start();
+                    });
                 })
-                .delay(this.resultComp?.RESULT_DURATION || 0)
-                .call(() => {
-                    this.playWinningSound(settlementResult);
-                })
-                .call(()=> resolve())
+                // .delay(this.resultComp?.RESULT_DURATION || 0)
+                // .call(() => {
+                //     this.playWinningSound(settlementResult);
+                // })
+                .call(() => resolve())
                 .start();
             //this.resultComp.playHighLight();
         });
 
         this.isFinishDiceAnim = true;
+    }
+
+    hideRoulette() {
+        this.resultComp.hideResultNumber();
     }
 
     private runTweenAsPromise(tweenObj: Tween<any>): Promise<void> {
@@ -182,11 +191,11 @@ export default class Game extends GameComponent {
         //this.playStoppableSFX(this.crowdSounds);
     }
 
-    playWinningSound(settlementResult: gc.GameServiceMessage.TSettlementResult) {
-        const winChoice = findWinningChoice(settlementResult);
-        const soundId = this.getAudioKeyForLanguage(winChoice);
-        this.playStoppableSFX(soundId);
-    }
+    // playWinningSound(settlementResult: gc.GameServiceMessage.TSettlementResult) {
+    //     const winChoice = findWinningChoice(settlementResult);
+    //     const soundId = this.getAudioKeyForLanguage(winChoice);
+    //     this.playStoppableSFX(soundId);
+    // }
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.stopStoppableSFX(id))
     stopStoppableSFX(id: string) {
@@ -204,14 +213,14 @@ export default class Game extends GameComponent {
             this.stopStoppableSFX("");
         }
     }
-    getAudioKeyForLanguage(name: string): string {
-        return `${name}_win_${Translator.getLanguageId() || "en"}`;
-    }
+    // getAudioKeyForLanguage(name: string): string {
+    //     return `${name}_win_${Translator.getLanguageId() || "en"}`;
+    // }
 
     async handleStartRound(isStartRound: boolean) {
         if (isStartRound) {
             super.handleStartRound(isStartRound);
-            this.resultComp?.setResultTextVisibility(false);
+            // this.resultComp?.setResultTextVisibility(false);
             this.spineExtraPaid.node.active = false;
             this.isFinishDiceAnim = this.isPlayAnimSettlement = false;
             this.resetMultiplierAndResultText(true);
@@ -226,20 +235,20 @@ export default class Game extends GameComponent {
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
     async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
         if (!firstJoinGameHistory) return null;
-        this.resultComp?.showResultNoAnim(this.histories[1]?.result, this.histories[1]?.roundId);
+        // this.resultComp?.showResultNoAnim(this.histories[1]?.result, this.histories[1]?.roundId);
         const { animationHighlight, roundTime, roundHistory: lastRound } = firstJoinGameHistory;
         if (!lastRound || roundTime < 0) return null;
 
         const { result: rawResult, roundId, settlementResult } = lastRound;
         const result = this.convertToSevenUpDownResult(rawResult);
         if (this.disabledGame) {
-            this.resultComp?.showResultNoAnim(result, roundId);
-            this.resultComp?.showResultText(result);
+            // this.resultComp?.showResultNoAnim(result, roundId);
+            // this.resultComp?.showResultText(result);
             return null;
         }
         // Show static result and multiplier if animation highlight is enabled
         if (animationHighlight && !this.isPlayAnimSettlement) {
-            this.resultComp?.showResultText(result);
+            // this.resultComp?.showResultText(result);
             this.multiplierComp?.renderMultiplier(result?.multiplier, false);
             this.betItemsComp.highlightBetItems(settlementResult);
         }
@@ -248,7 +257,7 @@ export default class Game extends GameComponent {
             await this.showResultAnim(result, roundId, result);
             this.betItemsComp.highlightBetItems(settlementResult);
         } else {
-            this.resultComp?.showResultNoAnim(result, roundId);
+            // this.resultComp?.showResultNoAnim(result, roundId);
         }
     }
 
@@ -270,6 +279,6 @@ export default class Game extends GameComponent {
             return;
         }
         this.multiplierComp.resetMultiplier(animated);
-        this.resultComp.setResultTextVisibility(false);
+        // this.resultComp.setResultTextVisibility(false);
     }
 }

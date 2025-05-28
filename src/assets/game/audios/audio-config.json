@@ -5,64 +5,19 @@
     "dice_shake": {
         "bundle": "resources"
     },
-    "down_win_vi": {
+    "ball_jumping_hit": {
         "bundle": "resources"
     },
-    "down_win_en": {
+    "ball_jumping_normal": {
         "bundle": "resources"
     },
-    "down_win_id": {
+    "ball_rolling": {
         "bundle": "resources"
     },
-    "down_win_th": {
+    "highlight_wheel": {
         "bundle": "resources"
     },
-    "down_win_zh_cn": {
-        "bundle": "resources"
-    },
-    "down_win_zh_tw": {
-        "bundle": "resources"
-    },
-    "multiplier": {
-        "bundle": "resources"
-    },
-    "seven_win_en": {
-        "bundle": "resources"
-    },
-    "seven_win_vi": {
-        "bundle": "resources"
-    },
-    "seven_win_th": {
-        "bundle": "resources"
-    },
-    "seven_win_id": {
-        "bundle": "resources"
-    },
-    "seven_win_zh_cn": {
-        "bundle": "resources"
-    },
-    "seven_win_zh_tw": {
-        "bundle": "resources"
-    },
-    "starting-round": {
-        "bundle": "resources"
-    },
-    "up_win_en": {
-        "bundle": "resources"
-    },
-    "up_win_vi": {
-        "bundle": "resources"
-    },
-    "up_win_th": {
-        "bundle": "resources"
-    },
-    "up_win_id": {
-        "bundle": "resources"
-    },
-    "up_win_zh_cn": {
-        "bundle": "resources"
-    },
-    "up_win_zh_tw": {
+    "wheel_result_announce": {
         "bundle": "resources"
     }
 }
