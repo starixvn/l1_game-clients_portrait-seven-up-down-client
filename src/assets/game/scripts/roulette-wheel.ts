@@ -83,37 +83,26 @@ export class RouletteWheel extends ObserverComponent {
         return id;
     }
 
-    showResultNumber(result: number) {
-        this.resultNumber.setNumber(result);
-        this.resultNumber.show();
-
-        const node = this.resultNumber.node;
-        node.setScale(v3(0, 0, 0));
-
-        tween(node)
-            .to(0.5, { scale: v3(1, 1, 1) }, { easing: "backOut" })
-            .start();
-    }
-
-    hideResultNumber() {
-        const node = this.resultNumber.node;
-        tween(node)
-            .to(0.5, { scale: v3(0, 0, 0) }, { easing: "backIn" })
-            .call(() => this.resultNumber.hide())
-            .start();
+    private getFormattedTime(): string {
+        const now = new Date();
+        return `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now
+            .getSeconds()
+            .toString()
+            .padStart(2, "0")}.${now.getMilliseconds().toString().padStart(3, "0")}`;
     }
 
     showResult(result: number, onComplete: () => void) {
-        console.log("--------showResult");
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] showResult START - Result:`, result);
         this.prepareWheelSpinAnimation();
 
         const t = { resultNumber: result + 1 };
-        console.log("--------onWheelUpdateResultNumber");
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] showResult - Calling onWheelUpdateResultNumber with:`, t);
         this.onWheelUpdateResultNumber(t);
 
         tween(this.node)
             .delay(9)
             .call(() => {
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] showResult - Showing result number and calling onComplete`);
                 this.showResultNumber(result);
                 onComplete();
             })
@@ -319,21 +308,30 @@ export class RouletteWheel extends ObserverComponent {
         this.prepareBallHitAnimation(t, i);
 
         if (!isNil(i.ballTrackEntry)) {
-            state.setListener({
-                complete: () => {
-                    this.pauseAnimation();
-                    const n = this.getCurrentWheelDegree();
-                    this.setBallStopAnimDataSector0(n, i.animationId);
-                    state.setEmptyAnimation(this.ballTrack, 0);
-                    this.resumeAnimation();
-                    this.stopBallAnimation(n);
-                },
-                start: () => {},
-                event: () => {},
-                dispose: () => {},
-                end: () => {},
-                interrupt: () => {},
-            });
+            //setTimeout(() => { }, i.ballTrackEntry.
+            setTimeout(() => {
+                this.pauseAnimation();
+                        const n = this.getCurrentWheelDegree();
+                        this.setBallStopAnimDataSector0(n, i.animationId);
+                        state.setEmptyAnimation(this.ballTrack, 0);
+                        this.resumeAnimation();
+                        this.stopBallAnimation(n);
+            }, i.ballTrackEntry.animationEnd * 1000);
+            // state.setListener({
+            //     complete: () => {
+            //         this.pauseAnimation();
+            //         const n = this.getCurrentWheelDegree();
+            //         this.setBallStopAnimDataSector0(n, i.animationId);
+            //         state.setEmptyAnimation(this.ballTrack, 0);
+            //         this.resumeAnimation();
+            //         this.stopBallAnimation(n);
+            //     },
+            //     start: () => {},
+            //     event: () => {},
+            //     dispose: () => {},
+            //     end: () => {},
+            //     interrupt: () => {},
+            // });
         }
     }
 
@@ -343,15 +341,24 @@ export class RouletteWheel extends ObserverComponent {
         this.prepareBallHitAnimation(t, i);
 
         if (!isNil(i.ballTrackEntry)) {
-            i.ballTrackEntry.listener = {
-                complete: () => {
-                    this.pauseAnimation();
-                    const n = this.getCurrentWheelDegree();
-                    state.setEmptyAnimation(this.ballTrack, 0);
-                    this.startBallPostCollisionTransitionAnimationGroup1(n, i.animationId);
-                    this.resumeAnimation();
-                },
-            };
+
+            setTimeout(() => {
+                this.pauseAnimation();
+                const n = this.getCurrentWheelDegree();
+                state.setEmptyAnimation(this.ballTrack, 0);
+                this.startBallPostCollisionTransitionAnimationGroup1(n, i.animationId);
+                this.resumeAnimation();
+            }, i.ballTrackEntry.animationEnd * 1000);
+            
+            // i.ballTrackEntry.listener = {
+            //     complete: () => {
+            //         this.pauseAnimation();
+            //         const n = this.getCurrentWheelDegree();
+            //         state.setEmptyAnimation(this.ballTrack, 0);
+            //         this.startBallPostCollisionTransitionAnimationGroup1(n, i.animationId);
+            //         this.resumeAnimation();
+            //     },
+            // };
         }
     }
 
@@ -361,15 +368,24 @@ export class RouletteWheel extends ObserverComponent {
         this.prepareBallHitAnimation(t, i);
 
         if (!isNil(i.ballTrackEntry)) {
-            i.ballTrackEntry.listener = {
-                complete: () => {
-                    this.pauseAnimation();
-                    const n = this.getCurrentWheelDegree();
-                    state.setEmptyAnimation(this.ballTrack, 0);
-                    this.startBallPostCollisionTransitionAnimationGroup2(n, i.animationId);
-                    this.resumeAnimation();
-                },
-            };
+
+            setTimeout(() => {
+                this.pauseAnimation();
+                const n = this.getCurrentWheelDegree();
+                state.setEmptyAnimation(this.ballTrack, 0);
+                this.startBallPostCollisionTransitionAnimationGroup2(n, i.animationId);
+                this.resumeAnimation();
+            }, i.ballTrackEntry.animationEnd * 1000);
+
+            // i.ballTrackEntry.listener = {
+            //     complete: () => {
+            //         this.pauseAnimation();
+            //         const n = this.getCurrentWheelDegree();
+            //         state.setEmptyAnimation(this.ballTrack, 0);
+            //         this.startBallPostCollisionTransitionAnimationGroup2(n, i.animationId);
+            //         this.resumeAnimation();
+            //     },
+            // };
         }
     }
 
@@ -379,15 +395,24 @@ export class RouletteWheel extends ObserverComponent {
         this.prepareBallHitAnimation(t, i);
 
         if (!isNil(i.ballTrackEntry)) {
-            i.ballTrackEntry.listener = {
-                complete: () => {
-                    this.pauseAnimation();
-                    const n = this.getCurrentWheelDegree();
-                    state.setEmptyAnimation(this.ballTrack, 0);
-                    this.startBallPostCollisionTransitionAnimationGroup3(n, i.animationId);
-                    this.resumeAnimation();
-                },
-            };
+
+            setTimeout(() => {
+                this.pauseAnimation();
+                const n = this.getCurrentWheelDegree();
+                state.setEmptyAnimation(this.ballTrack, 0);
+                this.startBallPostCollisionTransitionAnimationGroup3(n, i.animationId);
+                this.resumeAnimation();
+            }, i.ballTrackEntry.animationEnd * 1000);
+
+            // i.ballTrackEntry.listener = {
+            //     complete: () => {
+            //         this.pauseAnimation();
+            //         const n = this.getCurrentWheelDegree();
+            //         state.setEmptyAnimation(this.ballTrack, 0);
+            //         this.startBallPostCollisionTransitionAnimationGroup3(n, i.animationId);
+            //         this.resumeAnimation();
+            //     },
+            // };
         }
     }
 
@@ -395,70 +420,110 @@ export class RouletteWheel extends ObserverComponent {
         const n: any = {};
         this.prepareBallPostCollisionTransitionAnimation(t, e, n),
             isNil(n.ballTrackEntry) ||
-                (n.ballTrackEntry.listener.complete = (t) => {
+
+                setTimeout(() => {
                     this.pauseAnimation();
                     const n = this.getCurrentWheelDegree();
                     this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
                         this.setBallStopAnimDataSector1Forward(n, e),
                         this.resumeAnimation(),
                         this.stopBallAnimation(n);
-                });
+                }, n.ballTrackEntry.animationEnd * 1000);
+
+                // (n.ballTrackEntry.listener.complete = (t) => {
+                //     this.pauseAnimation();
+                //     const n = this.getCurrentWheelDegree();
+                //     this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
+                //         this.setBallStopAnimDataSector1Forward(n, e),
+                //         this.resumeAnimation(),
+                //         this.stopBallAnimation(n);
+                // });
     }
 
     startBallPostCollisionTransitionAnimationGroup2(t, e) {
         const n: any = {};
         this.prepareBallPostCollisionTransitionAnimation(t, e, n),
             isNil(n.ballTrackEntry) ||
-                (n.ballTrackEntry.listener.complete = (t) => {
-                    this.pauseAnimation();
-                    const n = this.getCurrentWheelDegree();
-                    this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
-                        this.setBallStopAnimDataSector0(n, e),
-                        this.resumeAnimation(),
-                        this.stopBallAnimation(n);
-                });
+
+            setTimeout(() => {
+                this.pauseAnimation();
+                const n = this.getCurrentWheelDegree();
+                this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
+                    this.setBallStopAnimDataSector0(n, e),
+                    this.resumeAnimation(),
+                    this.stopBallAnimation(n);
+            }, n.ballTrackEntry.animationEnd * 1000);
+
+                // (n.ballTrackEntry.listener.complete = (t) => {
+                //     this.pauseAnimation();
+                //     const n = this.getCurrentWheelDegree();
+                //     this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
+                //         this.setBallStopAnimDataSector0(n, e),
+                //         this.resumeAnimation(),
+                //         this.stopBallAnimation(n);
+                // });
     }
 
     startBallPostCollisionTransitionAnimationGroup3(t, e) {
         const n: any = {};
         this.prepareBallPostCollisionTransitionAnimation(t, e, n),
             isNil(n.ballTrackEntry) ||
-                (n.ballTrackEntry.listener.complete = (t) => {
-                    this.pauseAnimation();
-                    const n = this.getCurrentWheelDegree();
-                    this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
+
+
+            setTimeout(() => {
+                this.pauseAnimation();
+                const n = this.getCurrentWheelDegree();
+                this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
                         this.setBallStopAnimDataSector2Forward(n, e),
                         this.resumeAnimation(),
-                        this.stopBallAnimation(n);
-                });
+                    this.stopBallAnimation(n);
+            }, n.ballTrackEntry.animationEnd * 1000);
+
+            // (n.ballTrackEntry.listener.complete = (t) => {
+            //     this.pauseAnimation();
+            //     const n = this.getCurrentWheelDegree();
+            //     this.animation.getState().setEmptyAnimation(this.ballTrack, 0),
+            //         this.setBallStopAnimDataSector2Forward(n, e),
     }
 
     startBallTransitionAnimation() {
-        console.log("--------startBallTransitionAnimation");
-        this.animation.setAnimation(this.ballTrack, WheelAnimation.BALL_LOOP_TRANSITION, false).listener = {
-            complete: () => {
-                console.log("--------startBallTransitionAnimation complete");
-                this.pauseAnimation();
-                const i = this.getCurrentWheelDegree();
-                this.resumeAnimation();
-                this.startBallLanding(i);
-            },
-            start: () => {
-                console.log("--------startBallTransitionAnimation start");
-            },
-            interrupt: () => {
-                console.log("--------startBallTransitionAnimation interrupt");
-            },
-            end: () => {
-                console.log("--------startBallTransitionAnimation end");
-            },
-            dispose: () => {
-                console.log("--------startBallTransitionAnimation dispose");
-            },
-            event: () => {
-                console.log("--------startBallTransitionAnimation event");
-            },
-        };
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation START`);
+        const trackEntity = this.animation.setAnimation(this.ballTrack, WheelAnimation.BALL_LOOP_TRANSITION, false);
+
+        setTimeout(() => {
+            console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation complete`);
+            this.pauseAnimation();
+            const i = this.getCurrentWheelDegree();
+            console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Current degree:`, i);
+            this.resumeAnimation();
+            this.startBallLanding(i);
+        }, trackEntity.animationEnd * 1000);
+
+        // this.animation.setAnimation(this.ballTrack, WheelAnimation.BALL_LOOP_TRANSITION, false).listener = {
+        //     complete: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation complete`);
+        //         this.pauseAnimation();
+        //         const i = this.getCurrentWheelDegree();
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Current degree:`, i);
+        //         this.resumeAnimation();
+        //         this.startBallLanding(i);
+        //     },
+        //     start: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Animation started`);
+        //     },
+        //     interrupt: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Animation interrupted`);
+        //     },
+        //     end: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Animation ended`);
+        //     },
+        //     dispose: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Animation disposed`);
+        //     },
+        //     event: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallTransitionAnimation - Animation event triggered`);
+        //     },
+        // };
     }
 
     prepareBallPostCollisionTransitionAnimation(t, e, i) {
@@ -475,27 +540,33 @@ export class RouletteWheel extends ObserverComponent {
         const trackEntry = state.addAnimation(this.ballTrack, transitionAnim, false, 0);
         i.ballTrackEntry = trackEntry;
 
-        trackEntry.listener = {
-            start: () => {
-                console.log("--------prepareBallPostCollisionTransitionAnimation start");
-                this.playStoppableSFX("ball_jumping_hit");
-            },
-            complete: () => {
-                console.log("--------prepareBallPostCollisionTransitionAnimation complete");
-            },
-            event: () => {
-                console.log("--------prepareBallPostCollisionTransitionAnimation event");
-            },
-            dispose: () => {
-                console.log("--------prepareBallPostCollisionTransitionAnimation dispose");
-            },
-            end: () => {
-                console.log("--------prepareBallPostCollisionTransitionAnimation end");
-            },
-            interrupt: () => {
-                console.log("--------prepareBallPostCollisionTransitionAnimation interrupt");
-            },
-        };
+        // start 
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation start`);
+        this.playStoppableSFX("ball_jumping_hit");
+
+        // setTimeout(() => { }, trackEntry.animationEnd * 1000);
+
+        // trackEntry.listener = {
+        //     start: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation start`);
+        //         this.playStoppableSFX("ball_jumping_hit");
+        //     },
+        //     complete: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation complete`);
+        //     },
+        //     event: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation event`);
+        //     },
+        //     dispose: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation dispose`);
+        //     },
+        //     end: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation end`);
+        //     },
+        //     interrupt: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareBallPostCollisionTransitionAnimation interrupt`);
+        //     },
+        // };
     }
 
     initWheel() {
@@ -715,13 +786,13 @@ export class RouletteWheel extends ObserverComponent {
         const wheelNumber = this.getWheelNumber(resultNumber);
         this.numberRotationDegree = this.wheelNumbersRotations[wheelNumber];
         this.resultReceived = true;
-        console.log("--------onWheelUpdateResultNumber", resultNumber);
+        console.log("[Roulette Wheel] onWheelUpdateResultNumber", resultNumber);
         this.currentNumberColorVO = this.getNumberColorVO(resultNumber);
     }
 
     getWheelNumber(t) {
         const e = this.getNumberColorVO(t);
-        console.log("--------getWheelNumber", e);
+        console.log("[Roulette Wheel] getWheelNumber", e);
         return Number(e.value);
     }
 
@@ -750,60 +821,82 @@ export class RouletteWheel extends ObserverComponent {
         this.adjustAnimationRotationTimeline(WheelAnimation.WHEEL_STOP_TRANSITION, t);
         const i = state.setAnimation(this.wheelTrack, WheelAnimation.WHEEL_STOP_TRANSITION, false);
         const n = this.landingAnimationGroup.stopAnimation + this.numberLocalIndex;
+
         const trackEntry = state.setAnimation(this.ballTrack, n, false);
 
-        trackEntry.listener = {
-            start: () => {
-                console.log("--------stopBallAnimation start");
-                this.stopStoppableSFX("ball_rolling");
-                if (this.landingAnimationGroup.stopAnimation === WheelAnimation.BALL_STOP_TARGET_SECTOR_0_2) {
-                    this.playStoppableSFX("ball_jumping_normal");
-                }
-                this.rotateBallBone.rotation = -this.sectorInitialAngle;
-            },
-            complete: () => {
-                console.log("--------stopBallAnimation complete");
-                this.resultReceived = false;
-            },
-            interrupt: () => {
-                console.log("--------stopBallAnimation interrupt");
-            },
-            end: () => {
-                console.log("--------stopBallAnimation end");
-            },
-            dispose: () => {
-                console.log("--------stopBallAnimation dispose");
-            },
-            event: () => {
-                console.log("--------stopBallAnimation event");
-            },
-        };
+        console.log("[Roulette Wheel] stopBallAnimation start");
+        this.stopStoppableSFX("ball_rolling");
+        if (this.landingAnimationGroup.stopAnimation === WheelAnimation.BALL_STOP_TARGET_SECTOR_0_2) {
+            this.playStoppableSFX("ball_jumping_normal");
+        }
+        this.rotateBallBone.rotation = -this.sectorInitialAngle;
 
-        i.listener = {
-            complete: () => {
-                console.log("--------stopBallAnimation  WheelAnimation start");
-                this.pauseAnimation();
-                const i = this.getCurrentWheelDegree();
-                this.adjustAnimationRotationTimeline(WheelAnimation.WHEEL_IDLE, i);
-                state.setAnimation(this.wheelTrack, WheelAnimation.WHEEL_IDLE, true);
-                this.resumeAnimation();
-            },
-            start: () => {
-                console.log("--------stopBallAnimation  WheelAnimation start");
-            },
-            interrupt: () => {
-                console.log("--------stopBallAnimation  WheelAnimation interrupt");
-            },
-            end: () => {
-                console.log("--------stopBallAnimation  WheelAnimation end");
-            },
-            dispose: () => {
-                console.log("--------stopBallAnimation  WheelAnimation dispose");
-            },
-            event: () => {
-                console.log("--------stopBallAnimation  WheelAnimation event");
-            },
-        };
+        setTimeout(() => {
+            console.log("[Roulette Wheel] stopBallAnimation complete");
+            this.resultReceived = false;
+        }, trackEntry.animationEnd * 1000);
+
+        // trackEntry.listener = {
+        //     start: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation start");
+        //         this.stopStoppableSFX("ball_rolling");
+        //         if (this.landingAnimationGroup.stopAnimation === WheelAnimation.BALL_STOP_TARGET_SECTOR_0_2) {
+        //             this.playStoppableSFX("ball_jumping_normal");
+        //         }
+        //         this.rotateBallBone.rotation = -this.sectorInitialAngle;
+        //     },
+        //     complete: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation complete");
+        //         this.resultReceived = false;
+        //     },
+        //     interrupt: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation interrupt");
+        //     },
+        //     end: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation end");
+        //     },
+        //     dispose: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation dispose");
+        //     },
+        //     event: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation event");
+        //     },
+        // };
+
+        setTimeout(() => {
+            console.log("[Roulette Wheel] stopBallAnimation WheelAnimation start");
+            this.pauseAnimation();
+            const i = this.getCurrentWheelDegree();
+            this.adjustAnimationRotationTimeline(WheelAnimation.WHEEL_IDLE, i);
+            state.setAnimation(this.wheelTrack, WheelAnimation.WHEEL_IDLE, true);
+            this.resumeAnimation();
+        }, i.animationEnd * 1000);
+
+        // i.listener = {
+        //     complete: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation WheelAnimation start");
+        //         this.pauseAnimation();
+        //         const i = this.getCurrentWheelDegree();
+        //         this.adjustAnimationRotationTimeline(WheelAnimation.WHEEL_IDLE, i);
+        //         state.setAnimation(this.wheelTrack, WheelAnimation.WHEEL_IDLE, true);
+        //         this.resumeAnimation();
+        //     },
+        //     start: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation WheelAnimation start");
+        //     },
+        //     interrupt: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation WheelAnimation interrupt");
+        //     },
+        //     end: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation WheelAnimation end");
+        //     },
+        //     dispose: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation WheelAnimation dispose");
+        //     },
+        //     event: () => {
+        //         console.log("[Roulette Wheel] stopBallAnimation WheelAnimation event");
+        //     },
+        // };
     }
 
     forceBallStopAnimation(t) {
@@ -815,29 +908,34 @@ export class RouletteWheel extends ObserverComponent {
         state.setEmptyAnimation(this.ballTrack, 0);
         const trackEntry = state.addAnimation(this.ballTrack, WheelAnimation.BALL_SKIP, false, 0);
 
-        trackEntry.listener = {
-            start: () => {
-                console.log("--------forceBallStopAnimation start");
-                this.stopStoppableSFX("ball_rolling");
-                this.rotateBallBone.rotation = -this.numberRotationDegree;
-                this.resultReceived = false;
-            },
-            complete: () => {
-                console.log("--------forceBallStopAnimation complete");
-            },
-            interrupt: () => {
-                console.log("--------forceBallStopAnimation interrupt");
-            },
-            end: () => {
-                console.log("--------forceBallStopAnimation end");
-            },
-            dispose: () => {
-                console.log("--------forceBallStopAnimation dispose");
-            },
-            event: () => {
-                console.log("--------forceBallStopAnimation event");
-            },
-        };
+        console.log("[Roulette Wheel] forceBallStopAnimation start");
+        this.stopStoppableSFX("ball_rolling");
+        this.rotateBallBone.rotation = -this.numberRotationDegree;
+        this.resultReceived = false;
+
+        // trackEntry.listener = {
+        //     start: () => {
+        //         console.log("[Roulette Wheel] forceBallStopAnimation start");
+        //         this.stopStoppableSFX("ball_rolling");
+        //         this.rotateBallBone.rotation = -this.numberRotationDegree;
+        //         this.resultReceived = false;
+        //     },
+        //     complete: () => {
+        //         console.log("[Roulette Wheel] forceBallStopAnimation complete");
+        //     },
+        //     interrupt: () => {
+        //         console.log("[Roulette Wheel] forceBallStopAnimation interrupt");
+        //     },
+        //     end: () => {
+        //         console.log("[Roulette Wheel] forceBallStopAnimation end");
+        //     },
+        //     dispose: () => {
+        //         console.log("[Roulette Wheel] forceBallStopAnimation dispose");
+        //     },
+        //     event: () => {
+        //         console.log("[Roulette Wheel] forceBallStopAnimation event");
+        //     },
+        // };
     }
 
     onWheelStartSpinAnimation(t) {
@@ -856,68 +954,106 @@ export class RouletteWheel extends ObserverComponent {
     }
 
     prepareWheelSpinAnimation() {
-        console.log("--------prepareWheelSpinAnimation");
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareWheelSpinAnimation START`);
         let currentDegree = NaN;
 
         this.pauseAnimation();
         currentDegree = this.getCurrentWheelDegree();
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareWheelSpinAnimation - Current degree:`, currentDegree);
 
         this.resetWheelAnimation().then(() => {
+            console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareWheelSpinAnimation - After reset`);
             if (!isNaN(currentDegree)) {
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareWheelSpinAnimation - Adjusting wheel loop animation`);
                 this.adjustAnimationRotationTimeline(WheelAnimation.WHEEL_LOOP, currentDegree);
                 this.resumeAnimation();
-                console.log("--------prepareWheelSpinAnimation startBallAnimation");
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] prepareWheelSpinAnimation - Starting ball animation`);
                 this.startBallAnimation();
             }
         });
     }
 
     startBallAnimation() {
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation START`);
         this.animation.setAnimation(this.wheelTrack, WheelAnimation.WHEEL_LOOP, true);
         const trackEntry = this.animation.setAnimation(this.ballTrack, WheelAnimation.BALL_LOOP, true);
 
-        console.log("--------startBallAnimation setListener");
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation - Setting up listener`);
 
-        trackEntry.listener = {
-            complete: () => {
-                if (this.resultReceived) {
-                    this.startBallTransitionAnimation();
-                }
-            },
-            start: () => {
-                console.log("--------startBallAnimation  WheelAnimation start");
-            },
-            interrupt: () => {
-                console.log("--------startBallAnimation  WheelAnimation interrupt");
-            },
-            end: () => {
-                console.log("--------startBallAnimation  WheelAnimation end");
-            },
-            dispose: () => {
-                console.log("--------startBallAnimation  WheelAnimation dispose");
-            },
-            event: () => {
-                console.log("--------startBallAnimation  WheelAnimation event");
-            },
-        };
+        setTimeout(() => {
+            console.log(
+                `[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation complete - Result received:`,
+                this.resultReceived
+            );
+            if (this.resultReceived) {
+                this.startBallTransitionAnimation();
+            }
+        }, trackEntry.animationEnd * 1000);
+
+        // trackEntry.listener = {
+        //     complete: () => {
+        //         console.log(
+        //             `[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation complete - Result received:`,
+        //             this.resultReceived
+        //         );
+        //         if (this.resultReceived) {
+        //             this.startBallTransitionAnimation();
+        //         }
+        //     },
+        //     start: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation - Animation started`);
+        //     },
+        //     interrupt: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation - Animation interrupted`);
+        //     },
+        //     end: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation - Animation ended`);
+        //     },
+        //     dispose: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation - Animation disposed`);
+        //     },
+        //     event: () => {
+        //         console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallAnimation - Animation event triggered`);
+        //     },
+        // };
     }
 
     startBallLanding(t) {
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallLanding START - Degree:`, t);
         const landingType = random(0, 3);
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallLanding - Selected landing type:`, landingType);
         this.landingAnimationGroup = this.landingAnimationGroups[landingType];
         switch (landingType) {
             case 0:
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallLanding - Running non-collision animation group 1`);
                 this.runBallHitNonCollisionAnimationGroup1(t);
                 break;
             case 1:
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallLanding - Running collision animation group 1`);
                 this.runBallHitCollisionAnimationGroup1(t);
                 break;
             case 2:
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallLanding - Running collision animation group 2`);
                 this.runBallHitCollisionAnimationGroup2(t);
                 break;
             case 3:
+                console.log(`[${this.getFormattedTime()}] [Roulette Wheel] startBallLanding - Running collision animation group 3`);
                 this.runBallHitCollisionAnimationGroup3(t);
                 break;
         }
+    }
+
+    showResultNumber(result: number) {
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] showResultNumber START - Result:`, result);
+        this.resultNumber.setNumber(result);
+        this.resultNumber.show();
+
+        const node = this.resultNumber.node;
+        node.setScale(v3(0, 0, 0));
+
+        console.log(`[${this.getFormattedTime()}] [Roulette Wheel] showResultNumber - Starting scale animation`);
+        tween(node)
+            .to(0.5, { scale: v3(1, 1, 1) }, { easing: "backOut" })
+            .start();
     }
 }

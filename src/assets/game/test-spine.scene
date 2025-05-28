@@ -303,9 +303,9 @@
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
-    "defaultAnimation": "idle",
+    "defaultAnimation": "highlight",
     "_premultipliedAlpha": false,
-    "_timeScale": 1,
+    "_timeScale": 0.1,
     "_preCacheMode": 0,
     "_cacheMode": 0,
     "_sockets": [],
