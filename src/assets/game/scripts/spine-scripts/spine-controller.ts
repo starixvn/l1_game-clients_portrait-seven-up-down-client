@@ -16,7 +16,7 @@ export class spine_controller extends Component {
         // if (spine) {
         //     this.animation = spine;
 
-            
+
         // }
 
         console.log(this.animation);
@@ -33,7 +33,7 @@ export class spine_controller extends Component {
         this.animation.clearAnimation()
         const trackEntry = this.animation.setAnimation(1, "highlight", false);
 
-        
+
 
         this.animation.setTrackCompleteListener(trackEntry, () => {
             console.log("Animation complete setTrackCompleteListener");
@@ -42,14 +42,14 @@ export class spine_controller extends Component {
         this.animation.setTrackStartListener(trackEntry, () => {
             console.log("Animation start setTrackCompleteListener");
         });
-        
-        
+
+
 
         trackEntry.listener = {
             complete: () => {
                 console.log("Animation complete");
 
-                
+
             },
             event: (track, event) => {
                 console.log("Animation event", event);
@@ -74,49 +74,132 @@ export class spine_controller extends Component {
 
     isBallLoopComplete = false;
 
+    BALL_LOOP_ANIMATION = "Ball Loop";
+    BALL_POST_COLLISION_TRANSITION_ANIMATION = "Ball Post Collision Transition 1";
+    BALL_HIT_OUT_ANIMATION = "Ball Hit Out 1";
+    completeCallback = {};
+
     runRouletteAnimation() {
-        const trackEntry = this.roulette.setAnimation(this.ballTrack, "Ball Loop", true);
+        // this.roulette.setEndListener(this.ballTrack, () => {
+        //     console.log("Ball Loop end");
+        // });
+        this.roulette.clearTrack(this.ballTrack);
+        this.roulette.clearAnimation(this.ballTrack);
+        this.roulette.setAnimation(this.ballTrack, "Ball Loop", true);
 
         setTimeout(() => {
             this.isBallLoopComplete = true;
-        }, 3000);
+        }, 2000);
 
-        this.roulette.setTrackCompleteListener(trackEntry, () => {
-            console.log("Ball Loop complete");
-           if(this.isBallLoopComplete) {
-            this.roulette.clearTrack(this.ballTrack);
-            const trackEntry1 = this.roulette.setAnimation(this.ballTrack, "Ball Hit Out 1", false);
+        this.completeCallback[this.BALL_LOOP_ANIMATION] = () => {
+            if (this.isBallLoopComplete) {
+                this.roulette.addAnimation(this.ballTrack, this.BALL_HIT_OUT_ANIMATION, false);
+            }
+        };
 
-            this.roulette.setTrackCompleteListener(trackEntry1, () => {
-                console.log("Ball Hit Out 1 complete");
-                this.roulette.clearTrack(this.ballTrack);
-                this.roulette.setAnimation(this.ballTrack, "Ball Post Collision Transition 1", false);
-            });
-            trackEntry1.listener = {
-                complete: () => {
-                    console.log("trackEntry1 Animation complete");
-    
-                    
-                },
-                event: (track, event) => {
-                    console.log("trackEntry1 Animation event", event);
-                },
-                interrupt: (trackEntry) => {
-                    console.log("trackEntry1 Animation interrupt", trackEntry);
-                },
-                start: () => {
-                    console.log("trackEntry1 Animation start");
-                },
-                end: () => {
-                    console.log("trackEntry1 Animation end");
-                },
-                dispose: () => {
-                    console.log("trackEntry1 Animation dispose");
-                }
-            }   
+        this.completeCallback[this.BALL_POST_COLLISION_TRANSITION_ANIMATION] = () => {
+            this.roulette.setAnimation(this.ballTrack, this.BALL_LOOP_ANIMATION, true);
+        };
 
-           }
-        });
+        this.completeCallback[this.BALL_HIT_OUT_ANIMATION] = () => {
+            this.roulette.setAnimation(this.ballTrack, this.BALL_POST_COLLISION_TRANSITION_ANIMATION, false);
+        };
+
+
+        this.roulette.setCompleteListener((trackEntry) => {
+            console.log("Animation Complete", trackEntry.animation.name);
+
+            if (this.completeCallback[trackEntry.animation.name]) {
+                this.completeCallback[trackEntry.animation.name]();
+            }
+        })
+
+        //this.roulette.animation.
+        //this.roulette.clearAnimation()
+
+        // this.roulette.setTrackCompleteListener(trackEntry, () => {
+        //     console.log("Ball Loop complete", trackEntry);
+        //     if (this.isBallLoopComplete) {
+        //         //console.log(this.roulette.setAnimationCacheMode);
+        //         // trackEntry.reset();
+        //         //this.roulette.
+        //         //this.roulette.updateAnimation(0);
+        //         //trackEntry.reset();
+        //         // const timeScale = this.roulette.timeScale;
+        //         // this.roulette.clearAnimation();
+        //         // this.roulette.timeScale = 0;
+        //         //this.roulette.clearTrack(this.ballTrack);
+
+        //         const trackEntry1 = this.roulette.addAnimation(this.ballTrack, "Ball Hit Out 1", false);
+        //         // this.roulette.timeScale = timeScale;
+        //         // setTimeout(() => {
+        //         //     this.roulette.setAnimation(this.ballTrack, "Ball Post Collision Transition 1", false);
+        //         // }, trackEntry1.animationEnd * 1000);
+
+
+        //         this.roulette.setTrackCompleteListener(trackEntry1, () => {
+        //             console.log("trackEntry1 Animation complete", trackEntry1);
+        //             //this.roulette.updateAnimation(0);
+        //             // this.roulette.clearTrack(this.ballTrack);
+
+        //             //this.roulette.timeScale = 0;
+        //             // const timeScale1 = this.roulette.timeScale;
+        //             // this.roulette.timeScale = 0;
+
+        //             const trackEntry2 = this.roulette.addAnimation(this.ballTrack, "Ball Post Collision Transition 1", false);
+        //             //this.roulette.timeScale = timeScale1;
+        //             this.roulette.setTrackCompleteListener(trackEntry2, () => {
+        //                 console.log("Ball Post Collision Transition 1 complete", trackEntry2);
+        //             });
+
+
+        //             console.log("trackEntry2", trackEntry2);
+
+        //             console.log("animation state", this.roulette.getState());
+
+        //             //const currentTrack = this.roulette.getCurrent(this.ballTrack);
+        //             //console.log("currentTrack", currentTrack);
+        //             // this.roulette.setTrackCompleteListener(trackEntry2, () => {
+        //             //     console.log("Ball Post Collision Transition 1 complete", trackEntry2);
+        //             // });
+
+        //         });
+
+        //         // console.log(trackEntry1);
+        //         // trackEntry1.listener = {
+        //         //     complete: () => {
+        //         //         console.log("trackEntry1 Animation complete");
+        //         //         console.log("Ball Hit Out 1 complete");
+        //         //         this.roulette.updateAnimation(0);
+        //         //         // this.roulette.clearTrack(this.ballTrack);
+
+        //         //         const trackEntry2 = this.roulette.addAnimation(this.ballTrack, "Ball Post Collision Transition 1", false);
+
+        //         //         this.roulette.setTrackCompleteListener(trackEntry2, () => {
+        //         //             console.log("Ball Post Collision Transition 1 complete");
+        //         //         });
+
+
+        //         //     },
+        //         //     event: (track, event) => {
+        //         //         console.log("trackEntry1 Animation event", event);
+        //         //     },
+        //         //     interrupt: (trackEntry) => {
+        //         //         console.log("trackEntry1 Animation interrupt", trackEntry);
+        //         //     },
+        //         //     start: () => {
+        //         //         console.log("trackEntry1 Animation start");
+        //         //     },
+        //         //     end: () => {
+        //         //         console.log("trackEntry1 Animation end");
+        //         //     },
+        //         //     dispose: () => {
+        //         //         console.log("trackEntry1 Animation dispose");
+        //         //     }
+        //         // }
+
+        //     }
+        // });
     }
 }
 
