@@ -24,9 +24,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "sevenupdown",
         route: "sevenupdown",
     },
-    websocketOptions: {
-        timeout: 3000,
-    },
     mainObserverNamespace: "SevenUpDown",
     tolgeeUrl: "",
     storagePrefixKey: "portrait_seven_up_down",
