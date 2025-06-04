@@ -52,7 +52,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 32
+      "__id__": 33
     },
     "_id": "4000e9e2-a3d4-4560-8fe3-4ab270d37e39"
   },
@@ -97,6 +97,9 @@
       },
       {
         "__id__": 31
+      },
+      {
+        "__id__": 32
       }
     ],
     "_prefab": null,
@@ -757,9 +760,9 @@
     "_cacheMode": 0,
     "_sockets": [],
     "_useTint": false,
-    "_debugMesh": true,
-    "_debugBones": true,
-    "_debugSlots": true,
+    "_debugMesh": false,
+    "_debugBones": false,
+    "_debugSlots": false,
     "_enableBatch": false,
     "loop": true,
     "_id": "33E5vZxJ5LdJiGmRhVwNzr"
@@ -1086,8 +1089,8 @@
       "__id__": 2
     },
     "component": "",
-    "_componentId": "a1efeNR9FpG4oqgChH3Dtry",
-    "handler": "runRouletteAnimation",
+    "_componentId": "fd728LeU2dMpp0P109/bFK/",
+    "handler": "showResult",
     "customEventData": ""
   },
   {
@@ -1192,30 +1195,46 @@
     "_id": "6fj9KvkEBHmZ7msZJzrQjs"
   },
   {
+    "__type__": "fd728LeU2dMpp0P109/bFK/",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "animation": {
+      "__id__": 18
+    },
+    "result": 2,
+    "_id": "23bCS0yN9LkqqHGAdiTAxL"
+  },
+  {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 33
-    },
-    "shadows": {
       "__id__": 34
     },
-    "_skybox": {
+    "shadows": {
       "__id__": 35
     },
-    "fog": {
+    "_skybox": {
       "__id__": 36
     },
-    "octree": {
+    "fog": {
       "__id__": 37
     },
-    "skin": {
+    "octree": {
       "__id__": 38
     },
-    "lightProbeInfo": {
+    "skin": {
       "__id__": 39
     },
-    "postSettings": {
+    "lightProbeInfo": {
       "__id__": 40
+    },
+    "postSettings": {
+      "__id__": 41
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false
