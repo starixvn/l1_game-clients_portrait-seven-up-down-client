@@ -167,7 +167,7 @@ export default class Game extends GameComponent {
     }
 
     hideRoulette() {
-        this.resultComp.hideResultNumber();
+        //this.resultComp.hideResultNumber();
     }
 
     private runTweenAsPromise(tweenObj: Tween<any>): Promise<void> {
