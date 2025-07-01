@@ -131,7 +131,7 @@ export default class Game extends GameComponent {
             .call(() => {
                 if (multiplier) {
                     this.playStoppableSFX("multiplier");
-                    this.multiplierComp.renderMultiplier(multiplier, true);
+                    this.multiplierComp?.renderMultiplier(multiplier, true);
                 }
             })
             .delay(multiplierDelayTime);
