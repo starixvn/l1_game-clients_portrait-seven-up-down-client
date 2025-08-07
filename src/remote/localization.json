@@ -6,7 +6,8 @@
         "vi": "TRÊN 7 DƯỚI 7",
         "zh_cn": "7 上 7 下",
         "zh_tw": "7 上 7 下",
-        "ja": "7アップ7ダウン"
+        "ja": "7アップ7ダウン",
+        "es": "7 ARRIBA 7 ABAJO"
     },
     "gameNames": {
         "en": "7 Up 7 Down",
@@ -15,6 +16,7 @@
         "vi": "Trên 7 Dưới 7",
         "zh_cn": "7 上 7 下",
         "zh_tw": "7 上 7 下",
-        "ja": "7アップ7ダウン"
+        "ja": "7アップ7ダウン",
+        "es": "7 Arriba 7 Abajo"
     }
 }
