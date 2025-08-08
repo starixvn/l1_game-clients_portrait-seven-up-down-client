@@ -508,7 +508,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -329.368,
+      "x": -329.36800000000005,
       "y": 0,
       "z": 0
     },
@@ -850,7 +850,7 @@
       "a": 255
     },
     "_string": "Bet Choice",
-    "_horizontalAlign": 0,
+    "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
     "_fontSize": 20,
@@ -931,7 +931,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 106.09374999999994,
+      "width": 106.09375,
       "height": 57.96
     },
     "_anchorPoint": {
@@ -957,7 +957,7 @@
     "__prefab": {
       "__id__": 39
     },
-    "key": "Common.bet_choice",
+    "key": "Common.betChoice_shorten",
     "format": 3,
     "prefix": "",
     "suffix": "",
@@ -1019,8 +1019,8 @@
     },
     "_alignFlags": 40,
     "_target": null,
-    "_left": 0.2142755132850242,
-    "_right": 0.6575919384057971,
+    "_left": -0.48811234714673946,
+    "_right": -0.0447959220259665,
     "_top": 0,
     "_bottom": 0,
     "_horizontalCenter": 0,
@@ -1092,7 +1092,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -21.350000000000023,
+      "x": -21.35000000000005,
       "y": 0,
       "z": 0
     },
@@ -1384,7 +1384,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 123.27099999999996,
+      "x": 118.953,
       "y": 0,
       "z": 0
     },
@@ -1515,7 +1515,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 103.41796874999997,
+      "width": 103.41796875000006,
       "height": 57.96
     },
     "_anchorPoint": {
@@ -1603,8 +1603,8 @@
     },
     "_alignFlags": 40,
     "_target": null,
-    "_left": 0.586427555102657,
-    "_right": 0.2886715164553141,
+    "_left": 0.5812125792572463,
+    "_right": 0.2938864923007246,
     "_top": 0,
     "_bottom": 0,
     "_horizontalCenter": 0,
@@ -1676,7 +1676,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 244.159,
+      "x": 251.35599999999994,
       "y": 0,
       "z": 0
     },
@@ -1895,8 +1895,8 @@
     },
     "_alignFlags": 40,
     "_target": null,
-    "_left": 0.7613411175271739,
-    "_right": 0.17158507887983102,
+    "_left": 0.7700331465126812,
+    "_right": 0.1628930498943238,
     "_top": 0,
     "_bottom": 0,
     "_horizontalCenter": 0,
