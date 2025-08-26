@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { _decorator, Color, Component, Label, Node } from 'cc';
+import { _decorator, Color, Label } from 'cc';
 import { BetHistoryNewBodyItem } from 'db://shared-components/game/bet-history-new/scripts/bet-history-new-body-item';
 import { BetHistoryBodyItemType } from 'db://shared-components/game/bet-history/scripts/components/bet-history-body-item';
 import { BetChoice } from "../seven-up-down-choices";
@@ -17,7 +17,7 @@ export class BetHistorySevenUpDownBodyItem extends BetHistoryNewBodyItem {
 
         if(settlementResult) {
             Object.keys(settlementResult).forEach(choice => {
-                let stake = data.betHistoryLog[choice];
+                const stake = data.betHistoryLog[choice];
                 if(+stake > 0) {
                     const odd = this.getFormatOdd(odds[choice]?.toString(), data?.fractionalOddsFormat);
                     this.handleBetOptionItem(choice, odd);
@@ -31,11 +31,15 @@ export class BetHistorySevenUpDownBodyItem extends BetHistoryNewBodyItem {
     }
 
     handleBetOptionItem(choice: string, odd: string) {
+        let translatedChoice: string;
+
         if (choice.includes("seven")) {
-            this.lblBet.string = `${gc.Translator.gameTranslate(`glossary_${BetChoice.SEVEN}`)} @ ${odd}`;
+            translatedChoice = gc.Translator.gameTranslate(`glossary_${BetChoice.SEVEN}`);
         } else {
-            this.lblBet.string = `${gc.Translator.gameTranslate(`glossary_${choice}`)} @ ${odd}`;
+            translatedChoice = gc.Translator.gameTranslate(`glossary_${choice}`);
         }
+
+        this.lblBet.string = `${translatedChoice} @ ${odd}`;
     }
 }
 

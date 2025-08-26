@@ -1,4 +1,3 @@
-import gc from "@sg/game-client-base";
 import { _decorator, Component, Node, Sprite, SpriteAtlas } from 'cc';
 
 const { ccclass, property } = _decorator;
@@ -28,7 +27,7 @@ export class SevenUpDownRoundResultItem extends Component {
         if (this.nodeMultiplier) {
             this.nodeMultiplier.active = false;
         }
-        
+
         Object.keys(result).forEach((key) => {
             if (key === 'multiplier') {
                 this.nodeMultiplier.active = true;
@@ -41,7 +40,7 @@ export class SevenUpDownRoundResultItem extends Component {
                 totalPoint += result[key];
             }
         });
-        
+
         if (this.nodeTotalPoint) {
             this.nodeTotalPoint.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(`scoreboard-numer-${totalPoint}`);
         }

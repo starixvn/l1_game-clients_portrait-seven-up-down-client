@@ -1,4 +1,4 @@
-import { _decorator, sp, Component, UIOpacity, Vec3, SpriteFrame, Label, Node, Tween, SpriteAtlas, Sprite, tween, v3 } from "cc";
+import { _decorator, sp, Component, UIOpacity, Vec3, SpriteFrame, Label, Node, Tween, SpriteAtlas } from "cc";
 import { AnimationUtils } from "../../../extensions/shared-components/assets/shared/utils";
 import { calcTotalPoints, determineWinningChoice, pauseSpineAnimation } from "./seven-up-down-helper";
 import { SevenUpDownDice } from "./seven-up-down-dice";
@@ -72,12 +72,16 @@ export class SevenUpDownResult extends Component {
         this.dicesComponent.forEach((dice, index) => {
             const endPos = result[`dice${index + 1}`];
             const frame = this.diceSpriteFrames.find((spriteFrame) => spriteFrame.name === `end-${endPos}-${this.DICE_END_FRAME}`);
-            if (frame) dice.setFrame(frame);
+            if (frame) {
+                dice.setFrame(frame);
+            }
         });
     }
 
     setResultTextVisibility(isShow: boolean) {
-        if (!this.nodeResult) return;
+        if (!this.nodeResult) {
+            return;
+        }
         this.nodeResult.active = isShow;
 
         const uiOpacity = this.nodeResult.getComponent(UIOpacity) || this.nodeResult.addComponent(UIOpacity);

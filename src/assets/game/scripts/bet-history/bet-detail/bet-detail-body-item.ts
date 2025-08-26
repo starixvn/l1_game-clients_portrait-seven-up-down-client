@@ -1,7 +1,6 @@
 import gc from "@sg/game-client-base";
-import { _decorator, Color, Component, Label, Node } from 'cc';
-import BetDetailLogItem, { GameRoundBetDetailsLog } from 'db://shared-components/game/bet-history/scripts/components/bet-detail/bet-detail-log-item';
-import { BetDetailLogItemType } from 'db://shared-components/game/bet-history/scripts/components/bet-detail/bet-detail-log-item';
+import { _decorator, Color, Label } from 'cc';
+import { GameRoundBetDetailsLog, BetDetailLogItemType } from 'db://shared-components/game/bet-history/scripts/components/bet-detail/bet-detail-log-item';
 import { BetChoice } from '../../seven-up-down-choices';
 import BetDetailDirectBodyItem from 'db://direct-shared-components/bet-history/scripts/bet-detail-direct-body-item';
 
@@ -21,9 +20,9 @@ export class BetDetailBodyItem extends BetDetailDirectBodyItem {
     setData(data: BetDetailLogItemType) {
         super.setData(data);
 
-        const { betDetailsLog, result} = data;
+        const { betDetailsLog} = data;
         const { choice } = betDetailsLog as GameRoundBetDetailsLog & gc.BetHistory.DynamicObject<object>;
-       
+
         if (choice.includes("seven")) {
             this.lblChoice.string = Translator.gameTranslate(`glossary_${BetChoice.SEVEN}`);
         } else {
@@ -35,7 +34,7 @@ export class BetDetailBodyItem extends BetDetailDirectBodyItem {
     }
 
     protected calculateWinValue(data: BetDetailLogItemType) {
-        const { betDetailsLog, settlementResult, freeBet, odds, result } = data;
+        const { betDetailsLog, settlementResult, odds, result } = data;
         const { amount, choice } = betDetailsLog as GameRoundBetDetailsLog & gc.BetHistory.DynamicObject<object>;
         const { multiplier } = result as gc.BetHistory.DynamicObject<Multiplier>;
 
@@ -50,7 +49,7 @@ export class BetDetailBodyItem extends BetDetailDirectBodyItem {
             } else {
                 this.lblMultiplier.string = "-";
             }
-            
+
             winningAmount += amount;
             this.lblWin.string = FormatUtils.numberWithCommas(winningAmount, 2);
             this.setHighlightMultiplierDetail(winningAmount > amount);

@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, Node, _decorator, sp, Tween, tween, Vec3 } from "cc";
+import { Label, Node, _decorator, sp, Tween, tween } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -156,7 +156,6 @@ export default class Game extends GameComponent {
                 })
                 .call(()=> resolve())
                 .start();
-            //this.resultComp.playHighLight();
         });
 
         this.isFinishDiceAnim = true;
@@ -180,7 +179,6 @@ export default class Game extends GameComponent {
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartPlacingBet)
     startPlacingBet(isStartPlacingBet: boolean) {
-        //this.playStoppableSFX(this.crowdSounds);
     }
 
     playWinningSound(settlementResult: gc.GameServiceMessage.TSettlementResult) {
@@ -225,14 +223,18 @@ export default class Game extends GameComponent {
     }
 
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
-    async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
-        if (!firstJoinGameHistory) return null;
+    async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory): Promise<void> {
+        if (!firstJoinGameHistory) {
+            return;
+        }
 
         this.resultComp?.showResultNoAnim(this.histories[1]?.result, this.histories[1]?.roundId);
 
         const { animationHighlight, roundTime, roundHistory: lastRound } = firstJoinGameHistory;
 
-        if (!lastRound || roundTime < 0) return null;
+        if (!lastRound || roundTime < 0) {
+            return;
+        }
 
         const { result: rawResult, roundId, settlementResult } = lastRound;
 
@@ -240,7 +242,7 @@ export default class Game extends GameComponent {
         if (this.disabledGame) {
             this.resultComp?.showResultNoAnim(result, roundId);
             this.resultComp?.showResultText(result);
-            return null;
+            return;
         }
 
         // Show static result and multiplier if animation highlight is enabled

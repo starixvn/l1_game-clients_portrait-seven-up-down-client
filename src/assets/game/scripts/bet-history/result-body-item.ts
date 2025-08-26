@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, Node, Sprite, SpriteFrame } from "cc";
+import { _decorator, Label, Sprite, SpriteFrame } from "cc";
 import { BaseResultBodyItem } from "db://shared-components/game/bet-history/scripts/components/bet-history-body-item";
 import gc from "@sg/game-client-base";
 import { BetChoice } from "../seven-up-down-choices";
