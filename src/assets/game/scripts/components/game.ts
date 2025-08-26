@@ -5,7 +5,8 @@ import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
 import { AnimationUtils } from "../../../../extensions/shared-components/assets/shared/utils";
 import { siteConfigs } from "../../../scripts/site-configs";
-import { containerOptions, settings } from "../game-settings";
+import { settings } from "../game-settings";
+import { containerOptions } from "../containerOptions";
 import "./../../../resources/i18n";
 import { SevenUpDownResult } from "../seven-up-down-result";
 import { ISevenUpDownResult } from "../seven-up-down-choices";
@@ -275,7 +276,7 @@ export default class Game extends GameComponent {
         if (!this.multiplierComp || !this.resultComp) {
             return;
         }
-        
+
         this.multiplierComp.resetMultiplier(animated);
         this.resultComp.setResultTextVisibility(false);
     }
