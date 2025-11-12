@@ -27,6 +27,12 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     tolgeeUrl: "",
     storagePrefixKey: "portrait_seven_up_down",
     backgroundNoTranslate: true,
+    sentry: {
+        dsn: "",
+        browserUrl: "",
+        urlHash: "",
+        ignoreErrors: [],
+    },
 };
 
 let configDev = {
