@@ -11,3 +11,4 @@ window.envConfig = {
     SGConnectSubDomain: "hduatconnectsite",
     clientSubDomain: "hduatclient",
 };
+
