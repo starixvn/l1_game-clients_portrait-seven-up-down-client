@@ -10,5 +10,6 @@ window.envConfig = {
     subDirectory: "uat",
     SGConnectSubDomain: "hduatconnectsite",
     clientSubDomain: "hduatclient",
+    decimalPlaces: 4,
 };
 

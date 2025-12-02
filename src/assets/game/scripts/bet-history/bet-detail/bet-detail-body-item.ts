@@ -3,6 +3,7 @@ import { _decorator, Color, Label } from 'cc';
 import { GameRoundBetDetailsLog, BetDetailLogItemType } from 'db://shared-components/game/bet-history/scripts/components/bet-detail/bet-detail-log-item';
 import { BetChoice } from '../../seven-up-down-choices';
 import BetDetailDirectBodyItem from 'db://direct-shared-components/bet-history/scripts/bet-detail-direct-body-item';
+import { formatCurrencyWithConfig } from "db://shared-components/shared/utils";
 
 const { Translator, FormatUtils } = gc;
 const { ccclass, property } = _decorator;
@@ -51,12 +52,12 @@ export class BetDetailBodyItem extends BetDetailDirectBodyItem {
             }
 
             winningAmount += amount;
-            this.lblWin.string = FormatUtils.numberWithCommas(winningAmount, 2);
+            this.lblWin.string = formatCurrencyWithConfig(winningAmount);
             this.setHighlightMultiplierDetail(winningAmount > amount);
         } else {
             if (this.needRefund(settlementResult)) {
                 const value = amount * this.refundRatio;
-                this.lblWin.string = FormatUtils.numberWithCommas(value, 2);
+                this.lblWin.string = formatCurrencyWithConfig(value);
             } else {
                 this.lblWin.string = "0";
             }
